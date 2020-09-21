@@ -1,0 +1,84 @@
+.main-containor {
+  background-color: #f7f7fb;
+}
+
+.header {
+  background-color: white;
+  height: 7vh;
+  h3 {
+    margin: 0;
+  }
+}
+
+.main-containt-container {
+  // display: flex;
+  // align
+  width: 600px;
+  text-align: center;
+  margin: 0 auto;
+  height: 89vh;
+  .side-nav-container {
+    // width: 20%;
+    background-color: white;
+  }
+  .main-containt {
+    background-color: white;
+    padding: 30px;
+    // width: 80%;
+  }
+
+  .stepper-container {
+    .MuiStepper-alternativeLabel {
+      background-color: transparent;
+      .MuiStepIcon-root {
+        color: #e8f4ff;
+        height: 36px;
+        width: 36px;
+        .MuiStepIcon-text {
+          fill: #369efb;
+        }
+      }
+      .MuiStepIcon-root.MuiStepIcon-active {
+        color: #369efb !important;
+        .MuiStepIcon-text {
+          fill: white;
+        }
+      }
+      .MuiStepIcon-root.MuiStepIcon-completed {
+        color: #369efb !important;
+        .MuiStepIcon-text {
+          fill: white;
+        }
+      }
+      .MuiStepConnector-alternativeLabel {
+        top: 16px;
+        left: calc(-50% + 19px);
+        .MuiStepConnector-lineHorizontal {
+          border-top-width: 2px;
+          border-color: #e2e2e2;
+        }
+      }
+      .MuiStepLabel-label.MuiStepLabel-alternativeLabel {
+        margin-top: 12px;
+        font-weight: 400;
+      }
+      .MuiStepLabel-label.MuiStepLabel-active {
+        color: #369efb;
+      }
+      .MuiStepLabel-label {
+        color: #8a8a8a;
+      }
+      .MuiStepLabel-label.MuiStepLabel-completed {
+        color: black;
+      }
+    }
+  }
+}
+
+.footer-container {
+  background-color: rgba(138, 138, 138, 0.1);
+  height: 4vh;
+  h5 {
+    margin: 0;
+  }
+}
