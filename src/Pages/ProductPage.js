@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Tamplate from "../Containers/Tamplate";
+import ProductTable from "../Helper/ProductTable";
 import routes from "../router";
 
 export default class Productpage extends Component {
@@ -17,8 +18,15 @@ export default class Productpage extends Component {
 
   render() {
     return (
-      <Tamplate nextNavigate={routes.policy} backNavigate={routes.business}>
-        <h1>This is a ProductPage</h1>
+      <Tamplate
+        nextNavigate={routes.policy}
+        backNavigate={routes.business}
+        cardStyle="productTableCard"
+      >
+        <h1 className="page-title-hading">Business Details</h1>
+        <div className="product-table-container">
+          <ProductTable />
+        </div>
       </Tamplate>
     );
   }

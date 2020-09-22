@@ -9,6 +9,7 @@ import Policypage from "../Pages/PolicyPage";
 import Applicantpage from "../Pages/ApplicantPage";
 import Myquotepage from "../Pages/MyquotePage";
 import routes from "../router";
+import logo from "../Assets/VartaniLogo.svg";
 // import Typography from "@material-ui/core/Typography";
 
 function getSteps() {
@@ -67,10 +68,10 @@ class Tamplate extends Component {
     // this.setState({
     //   activeStep: this.state.activeStep + 1,
     // });
-    console.log(
-      "Tamplate -> handleNext -> this.state.activeStep",
-      this.state.activeStep
-    );
+    // console.log(
+    //   "Tamplate -> handleNext -> this.state.activeStep",
+    //   this.state.activeStep
+    // );
     this.props.history.push(this.props.nextNavigate);
   };
 
@@ -105,9 +106,14 @@ class Tamplate extends Component {
     return (
       <div className="main-containor">
         <div className="header">
-          <h3>Insurance</h3>
+          <div className="logo-image">
+            <img src={logo} alt="vartanilogo" />
+          </div>
+          <div className="header-title">
+            <h3>Insurance</h3>
+          </div>
         </div>
-        <div className="main-containt-container">
+        <div className={`${this.props.cardStyle} main-containt-container`}>
           <div className="">
             <TopStepper activeStep={this.state.activeStep} steps={steps} />
           </div>
@@ -117,27 +123,26 @@ class Tamplate extends Component {
               ""
             ) : (
               <div>
-                <div>
-                  {this.state.activeStep === 0 ? (
+                <div className="bottom-button-wrapper">
+                  {this.state.activeStep === 0 ||
+                  this.state.activeStep === steps.length - 1 ? (
                     ""
                   ) : (
                     <Button
                       // disabled={}
                       onClick={this.handleBack}
-                      className={this.props.backBtnStyle}
+                      className={`${this.props.backBtnStyle} previous-button-common`}
                     >
-                      Back
+                      Previous
                     </Button>
                   )}
                   <Button
                     variant="contained"
                     color="primary"
-                    className={this.props.nextBtnStyle}
+                    className={`${this.props.nextBtnStyle} next-button-common`}
                     onClick={this.handleNext}
                   >
-                    {this.state.activeStep === steps.length - 1
-                      ? "Finish"
-                      : "Next"}
+                    {this.props.nextBtnText ? this.props.nextBtnText : "Next"}
                   </Button>
                 </div>
               </div>
@@ -150,7 +155,14 @@ class Tamplate extends Component {
           </div>
         </div>
         <div className="footer-container">
-          <h5>copyright @vartani</h5>
+          <div className="copyright-text">
+            <span>© 2020 Vaartani, Inc. All rights reserved.</span>
+          </div>
+          <div className="tc-and-pp-container">
+            <span>Privacy Policy</span>
+            <div className="breadcrumbs"></div>
+            <span>Terms of Service</span>
+          </div>
         </div>
       </div>
     );

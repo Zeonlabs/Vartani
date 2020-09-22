@@ -1,0 +1,17 @@
+.product-table-container {
+  .MuiPaper-elevation1 {
+    box-shadow: none !important;
+  }
+
+  .MuiTableRow-root.Mui-selected,
+  .MuiTableRow-root.Mui-selected:hover {
+    background-color: rgb(0 123 245 / 8%) !important;
+  }
+
+  .MuiIconButton-colorSecondary:hover {
+    background-color: rgb(0 157 245 / 4%) !important;
+  }
+  .MuiCheckbox-colorSecondary.Mui-checked {
+    color: #0098f5 !important;
+  }
+}

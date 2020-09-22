@@ -1,8 +1,9 @@
-import { Button } from "@material-ui/core";
+// import { Button } from "@material-ui/core";
 import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
 import Tamplate from "../Containers/Tamplate";
 import routes from "../router";
+import Bussinessform from "./BussinessForm";
 
 class Businesspage extends Component {
   constructor(props) {
@@ -15,7 +16,9 @@ class Businesspage extends Component {
 
   // }
 
-  handleNext = () => {
+  handleNext = (e) => {
+    e.preventDefault();
+    // console.log("Businesspage -> handleNext -> e", e);
     // this.setState({
     //   activeStep: this.state.activeStep + 1,
     // });
@@ -39,26 +42,12 @@ class Businesspage extends Component {
         backNavigate={routes.seller}
         button
       >
-        <h1>This is a BusinessPage</h1>
-        <div>
-          <div>
-            <Button
-              // disabled={}
-              onClick={this.handleBack}
-              // className={this.props.backBtnStyle}
-            >
-              Back
-            </Button>
-            <Button
-              variant="contained"
-              color="primary"
-              // className={this.props.nextBtnStyle}
-              onClick={this.handleNext}
-            >
-              Next
-            </Button>
-          </div>
-        </div>
+        <h1 className="page-title-hading">Business Details</h1>
+
+        <Bussinessform
+          handleBack={this.handleBack}
+          handleNext={this.handleNext}
+        />
       </Tamplate>
     );
   }

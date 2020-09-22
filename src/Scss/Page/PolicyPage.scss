@@ -1,0 +1,40 @@
+.slider-container {
+  .MuiSlider-root {
+    color: #369efb;
+  }
+  .MuiSlider-rail {
+    height: 3px;
+    color: #f3f3f3;
+  }
+  .MuiSlider-mark {
+    width: 10px;
+    height: 10px;
+    top: 9px;
+    border-radius: 10px;
+    color: #e8f4ff;
+  }
+  .MuiSlider-thumb {
+    width: 17px;
+    height: 17px;
+    margin-top: -7px;
+    box-shadow: 0px 0px 0px 8px rgba(54, 158, 251, 0.22);
+  }
+  .MuiSlider-track {
+    height: 3px;
+    color: #369efb;
+  }
+}
+
+.startDate-container {
+  text-align: initial;
+  margin-top: 30px;
+}
+
+.slider-wrapper {
+  margin-top: 28px;
+  padding: 0 11px;
+}
+
+.policy-amount {
+  margin-top: 48px;
+}

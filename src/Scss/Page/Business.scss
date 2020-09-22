@@ -1,0 +1,18 @@
+.business-form-container {
+  text-align: initial;
+  margin-top: 18px;
+  .form-label {
+    font-size: 14px;
+    font-weight: 400;
+    margin: 0;
+  }
+  .form-control {
+    color: #141414;
+    &::placeholder {
+      color: #8a8a8a;
+    }
+    &:focus {
+      color: #141414;
+    }
+  }
+}

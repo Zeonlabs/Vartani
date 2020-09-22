@@ -1,22 +1,44 @@
 .main-containor {
   background-color: #f7f7fb;
+  font-family: Nunito;
+}
+
+body {
+  height: 100%;
+  margin: 0;
+  button:focus {
+    outline: 0;
+  }
 }
 
 .header {
   background-color: white;
-  height: 7vh;
-  h3 {
-    margin: 0;
+  height: 8.6vh;
+  display: flex;
+  .logo-image {
+    padding: 16px 43px;
+  }
+
+  .header-title {
+    h3 {
+      margin: 0;
+    }
+    justify-content: center;
+    width: 100%;
+    display: flex;
+    top: 2.1%;
+    position: absolute;
   }
 }
 
 .main-containt-container {
   // display: flex;
   // align
+  min-height: calc(100vh - 13.8vh);
   width: 600px;
   text-align: center;
   margin: 0 auto;
-  height: 89vh;
+  // height: 89vh;
   .side-nav-container {
     // width: 20%;
     background-color: white;
@@ -24,6 +46,7 @@
   .main-containt {
     background-color: white;
     padding: 30px;
+    margin-bottom: 26px;
     // width: 80%;
   }
 
@@ -77,8 +100,67 @@
 
 .footer-container {
   background-color: rgba(138, 138, 138, 0.1);
-  height: 4vh;
-  h5 {
-    margin: 0;
+  height: 5vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  .tc-and-pp-container {
+    display: flex;
+    padding-right: 26px;
+    .breadcrumbs {
+      border-left: 1.5px solid rgba(138, 138, 138, 0.33);
+      margin: 0 12px;
+    }
   }
+  .copyright-text {
+    padding: 6px 43px;
+  }
+  span {
+    font-size: 13px;
+    color: #8a8a8a;
+  }
+}
+
+.paragraphText {
+  color: #8a8a8a;
+  font-size: 16px;
+}
+
+.paragraph-hading {
+  color: #141414;
+  font-size: 16px;
+  font-weight: 700;
+  margin: 0;
+}
+
+.page-title-hading {
+  font-size: 28px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.next-button-common {
+  height: 42px;
+  width: 110px;
+  background-color: #145c9e;
+  border-radius: 3px;
+}
+
+.previous-button-common {
+  background: #ffffff !important;
+  height: 42px;
+  width: 110px;
+  border: 1px solid #aabacd !important;
+  box-sizing: border-box !important;
+  border-radius: 3px !important;
+}
+
+.bottom-button-wrapper {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 26px;
+}
+
+.productTableCard {
+  width: 900px;
 }
