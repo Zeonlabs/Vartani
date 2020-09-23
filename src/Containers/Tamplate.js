@@ -18,7 +18,7 @@ function getSteps() {
     { title: "Business", component: <Businesspage /> },
     { title: "Product", component: <Productpage /> },
     { title: "Policy", component: <Policypage /> },
-    { title: "Applicant details", component: <Applicantpage /> },
+    { title: "Applicant", component: <Applicantpage /> },
     { title: "My quote", component: <Myquotepage /> },
   ];
 }

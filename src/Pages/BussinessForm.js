@@ -24,7 +24,7 @@ export default class Bussinessform extends Component {
             <Form.Row>
               <Form.Group as={Col} controlId="storeFront">
                 <Form.Label>Store front</Form.Label>
-                <Form.Control placeholder="e.g store" />
+                <Form.Control placeholder="e.g Store" />
               </Form.Group>
               <Form.Group as={Col} controlId="business">
                 <Form.Label>Business</Form.Label>

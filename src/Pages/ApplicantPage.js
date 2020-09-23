@@ -61,6 +61,7 @@ export default class Applicantpage extends Component {
                   type="number"
                   maxLength={10}
                   placeholder="Enter your phone number"
+                  className="phone-number-field"
                 />
               </Form.Group>
 

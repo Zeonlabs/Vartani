@@ -26,7 +26,7 @@
     border: 2px solid #d2d2d2;
     border-left: 0 !important;
     height: 48px;
-    font-size: 20px;
+    font-size: 18px;
     &::placeholder {
       color: #d2d2d2;
     }
@@ -43,7 +43,8 @@
 .get-quotes-button {
   height: 48px;
   width: 100%;
-  background-color: #145c9e;
+  background-color: #145c9e !important;
+  font-family: "Nunito" !important;
 }
 
 .bottom-text-container {
@@ -59,4 +60,14 @@
   border: 1px solid #d2d2d2;
   border-radius: 6px;
   margin-bottom: 18px;
+}
+
+.error-message {
+  border: 2px solid #dc3545 !important;
+  border-right: 0px !important;
+}
+
+.success-message {
+  border: 2px solid #28a745 !important;
+  border-right: 0px !important;
 }

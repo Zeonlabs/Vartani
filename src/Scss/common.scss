@@ -6,6 +6,7 @@
 body {
   height: 100%;
   margin: 0;
+  font-family: Nunito !important;
   button:focus {
     outline: 0;
   }
@@ -13,10 +14,11 @@ body {
 
 .header {
   background-color: white;
-  height: 8.6vh;
+  height: 60px;
   display: flex;
   .logo-image {
-    padding: 16px 43px;
+    // padding: 16px 43px;
+    margin: auto 20px;
   }
 
   .header-title {
@@ -34,7 +36,7 @@ body {
 .main-containt-container {
   // display: flex;
   // align
-  min-height: calc(100vh - 13.8vh);
+  min-height: calc(100vh - 98px);
   width: 600px;
   text-align: center;
   margin: 0 auto;
@@ -55,8 +57,8 @@ body {
       background-color: transparent;
       .MuiStepIcon-root {
         color: #e8f4ff;
-        height: 36px;
-        width: 36px;
+        height: 28px;
+        width: 28px;
         .MuiStepIcon-text {
           fill: #369efb;
         }
@@ -74,8 +76,9 @@ body {
         }
       }
       .MuiStepConnector-alternativeLabel {
-        top: 16px;
-        left: calc(-50% + 19px);
+        top: 12px;
+        left: calc(-50% + 14px);
+        right: calc(50% + 14px);
         .MuiStepConnector-lineHorizontal {
           border-top-width: 2px;
           border-color: #e2e2e2;
@@ -100,7 +103,7 @@ body {
 
 .footer-container {
   background-color: rgba(138, 138, 138, 0.1);
-  height: 5vh;
+  height: 38px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -142,7 +145,8 @@ body {
 .next-button-common {
   height: 42px;
   width: 110px;
-  background-color: #145c9e;
+  font-family: Nunito !important;
+  background-color: #145c9e !important;
   border-radius: 3px;
 }
 
@@ -150,6 +154,7 @@ body {
   background: #ffffff !important;
   height: 42px;
   width: 110px;
+  font-family: Nunito !important;
   border: 1px solid #aabacd !important;
   box-sizing: border-box !important;
   border-radius: 3px !important;

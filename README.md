@@ -66,3 +66,9 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 ### `yarn build` fails to minify
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+
+### Command for a Google Cloud live 
+
+gsutil rsync -r gs://vaartani_mukund ./insurance
+
+gcloud app deploy

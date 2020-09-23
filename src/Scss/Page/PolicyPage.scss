@@ -12,6 +12,7 @@
     top: 9px;
     border-radius: 10px;
     color: #e8f4ff;
+    display: none;
   }
   .MuiSlider-thumb {
     width: 17px;
@@ -36,5 +37,18 @@
 }
 
 .policy-amount {
-  margin-top: 48px;
+  margin-top: 38px;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+  height: 15px;
+  width: 15px;
+  // cursor: grabbing;
+  // background: url("../../Assets/linux-icon.png");
+
+  // border-width: thin;
+  // background-color: blue;
+  color: pink;
+  opacity: 1;
+  display: block;
 }

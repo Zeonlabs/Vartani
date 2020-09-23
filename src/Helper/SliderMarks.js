@@ -5,35 +5,35 @@ const marks = [
   },
   {
     value: 11,
-    label: "2m",
+    // label: "2m",
   },
   {
     value: 22,
-    label: "3m",
+    // label: "3m",
   },
   {
     value: 33,
-    label: "4m",
+    // label: "4m",
   },
   {
     value: 44,
-    label: "5m",
+    // label: "5m",
   },
   {
     value: 55,
-    label: "6m",
+    // label: "6m",
   },
   {
     value: 66,
-    label: "7m",
+    // label: "7m",
   },
   {
     value: 77,
-    label: "8m",
+    // label: "8m",
   },
   {
     value: 88,
-    label: "9m",
+    // label: "9m",
   },
   {
     value: 99,

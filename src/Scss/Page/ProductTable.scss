@@ -14,4 +14,11 @@
   .MuiCheckbox-colorSecondary.Mui-checked {
     color: #0098f5 !important;
   }
+  .MuiTableCell-root {
+    font-family: Nunito !important;
+  }
+  .MuiTableCell-head {
+    font-weight: 600;
+    font-size: 16px;
+  }
 }
