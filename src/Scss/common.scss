@@ -13,11 +13,13 @@ body {
 }
 
 .header {
-  background-color: white;
+  background-color: transparent;
   height: 60px;
   display: flex;
   .logo-image {
     // padding: 16px 43px;
+    position: absolute;
+    top: 2%;
     margin: auto 20px;
   }
 
@@ -36,8 +38,8 @@ body {
 .main-containt-container {
   // display: flex;
   // align
-  min-height: calc(100vh - 98px);
-  width: 600px;
+  min-height: calc(100vh - 124px);
+  width: 532px;
   text-align: center;
   margin: 0 auto;
   // height: 89vh;
@@ -48,17 +50,28 @@ body {
   .main-containt {
     background-color: white;
     padding: 30px;
-    margin-bottom: 26px;
+    margin: 26px auto;
+    box-shadow: 0px 0px 7px 1px #f1f1f1;
+    border-radius: 4px;
     // width: 80%;
+  }
+
+  .MuiStepper-root {
+    display: flex;
+    padding: 18px 22px;
   }
 
   .stepper-container {
     .MuiStepper-alternativeLabel {
       background-color: transparent;
+      // .MuiStepper-root {
+      //   display: flex;
+      //   padding: 14px 22px;
+      // }
       .MuiStepIcon-root {
         color: #e8f4ff;
-        height: 28px;
-        width: 28px;
+        height: 20px;
+        width: 20px;
         .MuiStepIcon-text {
           fill: #369efb;
         }
@@ -76,16 +89,16 @@ body {
         }
       }
       .MuiStepConnector-alternativeLabel {
-        top: 12px;
-        left: calc(-50% + 14px);
-        right: calc(50% + 14px);
+        top: 9px;
+        left: calc(-50% + 10px);
+        right: calc(50% + 10px);
         .MuiStepConnector-lineHorizontal {
           border-top-width: 2px;
           border-color: #e2e2e2;
         }
       }
       .MuiStepLabel-label.MuiStepLabel-alternativeLabel {
-        margin-top: 12px;
+        margin-top: 6px;
         font-weight: 400;
       }
       .MuiStepLabel-label.MuiStepLabel-active {
@@ -96,6 +109,9 @@ body {
       }
       .MuiStepLabel-label.MuiStepLabel-completed {
         color: black;
+      }
+      .MuiTypography-body2 {
+        font-size: 12px;
       }
     }
   }
@@ -126,18 +142,18 @@ body {
 
 .paragraphText {
   color: #8a8a8a;
-  font-size: 16px;
+  font-size: 12px;
 }
 
 .paragraph-hading {
   color: #141414;
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 700;
   margin: 0;
 }
 
 .page-title-hading {
-  font-size: 28px;
+  font-size: 18px;
   font-weight: 600;
   margin: 0;
 }

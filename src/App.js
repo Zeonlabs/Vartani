@@ -2,6 +2,8 @@ import React from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Applicantpage from "./Pages/ApplicantPage";
 import Businesspage from "./Pages/BusinessPage";
+import Distribution from "./Pages/Distribution";
+import Manufacturingpage from "./Pages/ManufacturingPage";
 import Myquotepage from "./Pages/MyquotePage";
 import Policypage from "./Pages/PolicyPage";
 import Productpage from "./Pages/ProductPage";
@@ -49,6 +51,18 @@ const App = () => {
           path={routes.quotes}
           name="quotePage"
           component={Myquotepage}
+        />
+        <Route
+          exact
+          path={routes.manufacturing}
+          name="maufacturing Page"
+          component={Manufacturingpage}
+        />
+        <Route
+          exact
+          path={routes.distribution}
+          name="distribution page"
+          component={Distribution}
         />
       </Switch>
     </BrowserRouter>

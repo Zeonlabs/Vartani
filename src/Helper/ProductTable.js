@@ -20,31 +20,140 @@ import Tooltip from "@material-ui/core/Tooltip";
 // import Switch from "@material-ui/core/Switch";
 import DeleteIcon from "@material-ui/icons/Delete";
 import FilterListIcon from "@material-ui/icons/FilterList";
-
-function createData(name, calories, fat, carbs, protein) {
-  return { name, calories, fat, carbs, protein };
-}
+import Sample from "../Assets/sample.png";
+import LinkSvg from "../Assets/link.svg";
 
 const rows = [
-  createData("Cupcake", 305, 3.7, 67, 4.3),
-  createData("Donut", 452, 25.0, 51, 4.9),
-  createData("Eclair", 262, 16.0, 24, 6.0),
-  createData("Frozen yoghurt", 159, 6.0, 24, 4.0),
-  createData("Gingerbread", 356, 16.0, 49, 3.9),
-  createData("Honeycomb", 408, 3.2, 87, 6.5),
-  createData(
-    "Ice cream sandwich",
-    "Ice cream sandwich",
-    "Ice cream sandwich",
-    "Ice cream sandwich",
-    "Ice cream sandwich Ice cream sandwich"
-  ),
-  createData("Jelly Bean", 375, 0.0, 94, 0.0),
-  createData("KitKat", 518, 26.0, 65, 7.0),
-  createData("Lollipop", 392, 0.2, 98, 0.0),
-  createData("Marshmallow", 318, 0, 81, 2.0),
-  createData("Nougat", 360, 19.0, 9, 37.0),
-  createData("Oreo", 437, 18.0, 63, 4.0),
+  {
+    id: 1,
+    link: "https://www.amazon.com/sp?seller=A2OWUYLA50HX3S",
+    asin: "B07238WLLR",
+    image: Sample,
+    name:
+      "Berri Fit Dragon Fruit Organic Sports Drink Alternative With Natural",
+    brand: "Berri Fit",
+    manufacutrer: "Berri Pro Inc.",
+  },
+  {
+    id: 2,
+    link: "https://www.amazon.com/sp?seller=A2OWUYLA50HX3S",
+    asin: "B07238WLLR",
+    image: Sample,
+    name:
+      "Berri Fit Dragon Fruit Organic Sports Drink Alternative With Natural",
+    brand: "Berri Fit",
+    manufacutrer: "Berri Pro Inc.",
+  },
+  {
+    id: 3,
+    link: "https://www.amazon.com/sp?seller=A2OWUYLA50HX3S",
+    asin: "B07238WLLR",
+    image: Sample,
+    name:
+      "Berri Fit Dragon Fruit Organic Sports Drink Alternative With Natural",
+    brand: "Berri Fit",
+    manufacutrer: "Berri Pro Inc.",
+  },
+  {
+    id: 4,
+    link: "https://www.amazon.com/sp?seller=A2OWUYLA50HX3S",
+    asin: "B07238WLLR",
+    image: Sample,
+    name:
+      "Berri Fit Dragon Fruit Organic Sports Drink Alternative With Natural",
+    brand: "Berri Fit",
+    manufacutrer: "Berri Pro Inc.",
+  },
+  {
+    id: 5,
+    link: "https://www.amazon.com/sp?seller=A2OWUYLA50HX3S",
+    asin: "B07238WLLR",
+    image: Sample,
+    name:
+      "Berri Fit Dragon Fruit Organic Sports Drink Alternative With Natural",
+    brand: "Berri Fit",
+    manufacutrer: "Berri Pro Inc.",
+  },
+  {
+    id: 6,
+    link: "https://www.amazon.com/sp?seller=A2OWUYLA50HX3S",
+    asin: "B07238WLLR",
+    image: Sample,
+    name:
+      "Berri Fit Dragon Fruit Organic Sports Drink Alternative With Natural",
+    brand: "Berri Fit",
+    manufacutrer: "Berri Pro Inc.",
+  },
+  {
+    id: 7,
+    link: "https://www.amazon.com/sp?seller=A2OWUYLA50HX3S",
+    asin: "B07238WLLR",
+    image: Sample,
+    name:
+      "Berri Fit Dragon Fruit Organic Sports Drink Alternative With Natural",
+    brand: "Berri Fit",
+    manufacutrer: "Berri Pro Inc.",
+  },
+  {
+    id: 8,
+    link: "https://www.amazon.com/sp?seller=A2OWUYLA50HX3S",
+    asin: "B07238WLLR",
+    image: Sample,
+    name:
+      "Berri Fit Dragon Fruit Organic Sports Drink Alternative With Natural",
+    brand: "Berri Fit",
+    manufacutrer: "Berri Pro Inc.",
+  },
+  {
+    id: 9,
+    link: "https://www.amazon.com/sp?seller=A2OWUYLA50HX3S",
+    asin: "B07238WLLR",
+    image: Sample,
+    name:
+      "Berri Fit Dragon Fruit Organic Sports Drink Alternative With Natural",
+    brand: "Berri Fit",
+    manufacutrer: "Berri Pro Inc.",
+  },
+  {
+    id: 10,
+    link: "https://www.amazon.com/sp?seller=A2OWUYLA50HX3S",
+    asin: "B07238WLLR",
+    image: Sample,
+    name:
+      "Berri Fit Dragon Fruit Organic Sports Drink Alternative With Natural",
+    brand: "Berri Fit",
+    manufacutrer: "Berri Pro Inc.",
+  },
+  {
+    id: 11,
+    link: "https://www.amazon.com/sp?seller=A2OWUYLA50HX3S",
+    asin: "B07238WLLR",
+    image: Sample,
+    name:
+      "Berri Fit Dragon Fruit Organic Sports Drink Alternative With Natural",
+    brand: "Berri Fit",
+    manufacutrer: "Berri Pro Inc.",
+  },
+  {
+    id: 12,
+    link: "https://www.amazon.com/sp?seller=A2OWUYLA50HX3S",
+    asin: "B07238WLLR",
+    image: Sample,
+    name:
+      "Berri Fit Dragon Fruit Organic Sports Drink Alternative With Natural",
+    brand: "Berri Fit",
+    manufacutrer: "Berri Pro Inc.",
+  },
+  {
+    id: 13,
+    link: "https://www.amazon.com/sp?seller=A2OWUYLA50HX3S",
+    asin: "B07238WLLR",
+    image: Sample,
+    name:
+      "Berri Fit Dragon Fruit Organic Sports Drink Alternative With Natural",
+    brand: "Berri Fit",
+    manufacutrer: "Berri Pro Inc.",
+  },
 ];
 
 // function descendingComparator(a, b, orderBy) {
@@ -74,21 +183,22 @@ function stableSort(array) {
 }
 
 const headCells = [
+  { id: "link", numeric: false, disablePadding: false, label: "LINK" },
+  { id: "asin", numeric: false, disablePadding: false, label: "ASIN" },
   {
     id: "image",
     numeric: false,
     disablePadding: true,
-    label: "Image",
+    label: "IMAGE",
   },
-  { id: "name", numeric: false, disablePadding: false, label: "Name" },
-  { id: "category", numeric: false, disablePadding: false, label: "Category" },
+  { id: "name", numeric: false, disablePadding: false, label: "NAME" },
+  { id: "category", numeric: false, disablePadding: false, label: "BRAND" },
   {
     id: "manufacutrer",
     numeric: false,
     disablePadding: false,
     label: "Manufacturer",
   },
-  { id: "Asin", numeric: false, disablePadding: false, label: "Asin" },
 ];
 
 function EnhancedTableHead(props) {
@@ -258,19 +368,19 @@ export default function ProductTable() {
 
   const handleSelectAllClick = (event) => {
     if (event.target.checked) {
-      const newSelecteds = rows.map((n) => n.name);
+      const newSelecteds = rows.map((n) => n.id);
       setSelected(newSelecteds);
       return;
     }
     setSelected([]);
   };
 
-  const handleClick = (event, name) => {
-    const selectedIndex = selected.indexOf(name);
+  const handleClick = (event, id) => {
+    const selectedIndex = selected.indexOf(id);
     let newSelected = [];
 
     if (selectedIndex === -1) {
-      newSelected = newSelected.concat(selected, name);
+      newSelected = newSelected.concat(selected, id);
     } else if (selectedIndex === 0) {
       newSelected = newSelected.concat(selected.slice(1));
     } else if (selectedIndex === selected.length - 1) {
@@ -283,6 +393,12 @@ export default function ProductTable() {
     }
 
     setSelected(newSelected);
+  };
+
+  const handelRedirect = (data) => {
+    const url = data.split(":");
+    console.log("handelRedirect -> url", url);
+    window.location.replace(url[1]);
   };
 
   const handleChangePage = (event, newPage) => {
@@ -298,7 +414,7 @@ export default function ProductTable() {
   //   setDense(event.target.checked);
   // };
 
-  const isSelected = (name) => selected.indexOf(name) !== -1;
+  const isSelected = (id) => selected.indexOf(id) !== -1;
 
   const emptyRows =
     rowsPerPage - Math.min(rowsPerPage, rows.length - page * rowsPerPage);
@@ -327,31 +443,47 @@ export default function ProductTable() {
               {stableSort(rows)
                 .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
                 .map((row, index) => {
-                  const isItemSelected = isSelected(row.name);
+                  const isItemSelected = isSelected(row.id);
                   const labelId = `enhanced-table-checkbox-${index}`;
 
                   return (
                     <TableRow
                       hover
-                      onClick={(event) => handleClick(event, row.name)}
+                      onClick={(event) => handleClick(event, row.id)}
                       role="checkbox"
                       aria-checked={isItemSelected}
                       tabIndex={-1}
-                      key={row.name}
+                      key={row.id}
                       selected={isItemSelected}
                     >
                       <TableCell
-                        component="th"
-                        id={labelId}
-                        scope="row"
-                        padding="none"
+                        // component="th"
+                        // id={labelId}
+                        // scope="row"
+                        // padding="none"
+                        width="5%"
+                        align="center"
                       >
+                        <img
+                          onClick={() => handelRedirect(row.link)}
+                          src={LinkSvg}
+                          alt="link"
+                        />
+                        {/* {row.name} */}
+                      </TableCell>
+                      <TableCell align="left">{row.asin}</TableCell>
+                      <TableCell align="left">
+                        <img src={row.image} alt="product" />
+                      </TableCell>
+                      <TableCell align="left" width="40%">
                         {row.name}
                       </TableCell>
-                      <TableCell align="left">{row.calories}</TableCell>
-                      <TableCell align="left">{row.fat}</TableCell>
-                      <TableCell align="left">{row.carbs}</TableCell>
-                      <TableCell align="left">{row.protein}</TableCell>
+                      <TableCell align="left" width="12%">
+                        {row.brand}
+                      </TableCell>
+                      <TableCell align="left" width="18%">
+                        {row.manufacutrer}
+                      </TableCell>
                       <TableCell padding="checkbox">
                         <Checkbox
                           checked={isItemSelected}

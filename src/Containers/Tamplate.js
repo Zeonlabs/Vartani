@@ -57,6 +57,13 @@ class Tamplate extends Component {
       this.setState({
         activeStep: 5,
       });
+    } else if (
+      this.props.location.pathname === routes.manufacturing ||
+      routes.distribution
+    ) {
+      this.setState({
+        activeStep: 6,
+      });
     }
   };
 
@@ -72,7 +79,11 @@ class Tamplate extends Component {
     //   "Tamplate -> handleNext -> this.state.activeStep",
     //   this.state.activeStep
     // );
-    this.props.history.push(this.props.nextNavigate);
+    if (this.props.addSecondButton) {
+      this.props.history.push(this.props.addSecondButton);
+    } else {
+      this.props.history.push(this.props.nextNavigate);
+    }
   };
 
   // useStyles = makeStyles((theme) => ({
@@ -103,20 +114,23 @@ class Tamplate extends Component {
   render() {
     // const classes = this.useStyles();
     const steps = getSteps();
+    if (
+      this.props.location.pathname === routes.manufacturing ||
+      this.props.location.pathname === routes.distribution
+    ) {
+      steps.push({ title: "Discount" });
+    }
     return (
       <div className="main-containor">
         <div className="header">
           <div className="logo-image">
             <img src={logo} alt="vartanilogo" />
           </div>
-          <div className="header-title">
-            <h3>Insurance</h3>
+          <div className="main-containt-container">
+            <TopStepper activeStep={this.state.activeStep} steps={steps} />
           </div>
         </div>
         <div className={`${this.props.cardStyle} main-containt-container`}>
-          <div className="">
-            <TopStepper activeStep={this.state.activeStep} steps={steps} />
-          </div>
           <div className="main-containt">
             <div>{this.props.children}</div>
             {this.props.button ? (
@@ -124,8 +138,7 @@ class Tamplate extends Component {
             ) : (
               <div>
                 <div className="bottom-button-wrapper">
-                  {this.state.activeStep === 0 ||
-                  this.state.activeStep === steps.length - 1 ? (
+                  {this.state.activeStep === 0 ? (
                     ""
                   ) : (
                     <Button
@@ -140,11 +153,27 @@ class Tamplate extends Component {
                     variant="contained"
                     color="primary"
                     className={`${this.props.nextBtnStyle} next-button-common`}
-                    onClick={this.handleNext}
+                    onClick={
+                      this.props.last
+                        ? this.props.handelPay
+                        : this.props.this.handleNext
+                    }
                   >
                     {this.props.nextBtnText ? this.props.nextBtnText : "Next"}
                   </Button>
                 </div>
+                {this.props.addSecondButton ? (
+                  <Button
+                    variant="contained"
+                    color="primary"
+                    className={`${this.props.nextBtnStyle} ${this.props.secondBtnStyle} next-button-common`}
+                    onClick={this.handleNext}
+                  >
+                    Get Discount
+                  </Button>
+                ) : (
+                  ""
+                )}
               </div>
             )}
             {this.state.activeStep === 0 ? (

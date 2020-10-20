@@ -22,31 +22,31 @@ export default class Bussinessform extends Component {
         <div className="business-form-container">
           <Form onSubmit={this.props.handleNext}>
             <Form.Row>
-              <Form.Group as={Col} controlId="storeFront">
-                <Form.Label>Store front</Form.Label>
-                <Form.Control placeholder="e.g Store" />
+              <Form.Group as={Col} controlId="sellerId">
+                <Form.Label>Seller ID</Form.Label>
+                <Form.Control placeholder="A1P3JEITQENDBE" />
               </Form.Group>
+              <Form.Group as={Col} controlId="storename">
+                <Form.Label>Store Name</Form.Label>
+                <Form.Control placeholder="Berri Fit®" />
+              </Form.Group>
+            </Form.Row>
+            <Form.Row>
               <Form.Group as={Col} controlId="business">
                 <Form.Label>Business</Form.Label>
                 <Form.Control placeholder="Enter your bussiness" />
               </Form.Group>
-            </Form.Row>
-            <Form.Row>
-              <Form.Group as={Col} controlId="productDetail">
-                <Form.Label>Store front</Form.Label>
-                <Form.Control placeholder="Vaartani Pvt. LTD" />
-              </Form.Group>
-              <Form.Group as={Col} controlId="legal structure">
-                <Form.Label>Legal Structure</Form.Label>
+              <Form.Group as={Col} controlId="entity_type">
+                <Form.Label>Business Entity Type</Form.Label>
                 <Form.Control as="select" placeholder="Select legal structure">
-                  <option>Architacture</option>
+                  <option>Corporation</option>
                   <option>Fashion</option>
                 </Form.Control>
               </Form.Group>
             </Form.Row>
 
             <Form.Group controlId="registeredAddress">
-              <Form.Label>Registered Address</Form.Label>
+              <Form.Label>Registered Business Address</Form.Label>
               <Form.Control placeholder="1234 Main St" />
             </Form.Group>
 
@@ -71,10 +71,6 @@ export default class Bussinessform extends Component {
               </Form.Group>
             </Form.Row>
             <Form.Row>
-              <Form.Group as={Col} controlId="website">
-                <Form.Label>Website</Form.Label>
-                <Form.Control placeholder="Enter your website " />
-              </Form.Group>
               <Form.Group as={Col} controlId="dateofEstablishment">
                 <Form.Label>Date of Establishment</Form.Label>
                 <Form.Control
@@ -83,27 +79,13 @@ export default class Bussinessform extends Component {
                   placeholder="Enter your country"
                 />
               </Form.Group>
-            </Form.Row>
-
-            <Form.Row>
-              <Form.Group as={Col} controlId="noOfEmployee">
-                <Form.Label>Number of Employees</Form.Label>
-                <Form.Control placeholder="Enter the number of employees" />
-              </Form.Group>
 
               <Form.Group as={Col} controlId="formGridState">
-                <Form.Label>Expected Annual Revenue 2020 (USD)</Form.Label>
+                <Form.Label>Expected Annual Revenue (USD)</Form.Label>
                 <Form.Control as="select" placeholder="Select your revenue">
                   <option>5000</option>
                   <option>1000</option>
                 </Form.Control>
-              </Form.Group>
-            </Form.Row>
-
-            <Form.Row>
-              <Form.Group as={Col} controlId="identificationNumber">
-                <Form.Label>Employer Identification Number</Form.Label>
-                <Form.Control placeholder="Enter your Employer ID number" />
               </Form.Group>
             </Form.Row>
 

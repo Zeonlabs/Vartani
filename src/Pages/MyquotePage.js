@@ -2,17 +2,26 @@ import React, { Component } from "react";
 import Tamplate from "../Containers/Tamplate";
 import routes from "../router";
 import logo from "../Assets/Amazone.svg";
-import SignatureCanvas from "react-signature-canvas";
 
 export default class Myquotepage extends Component {
   constructor(props) {
     super(props);
 
-    this.state = {};
+    this.state = {
+      lastPage: false,
+    };
   }
 
-  // componentDidMount() {
+  componentDidMount() {
+    console.log(this.props);
+  }
 
+  handelPayButton = () => {
+    console.log("Myquotepage -> handelPayButton -> data");
+    this.setState({
+      lastPage: true,
+    });
+  };
   // }
 
   // componentDidUpdate(prevProps, prevState, snapshot) { if (prevState.name !== this.state.name) { this.handler() } }
@@ -21,22 +30,42 @@ export default class Myquotepage extends Component {
     return (
       <Tamplate
         backNavigate={routes.applicant}
-        nextBtnText="Payment"
+        nextBtnText="Pay"
+        addSecondButton={
+          this.state.lastPage || this.props.match.params.id === "1"
+            ? false
+            : routes.manufacturing
+        }
         nextBtnStyle="get-quotes-button"
+        secondBtnStyle="get-discount"
+        backBtnStyle="back-cutton-display"
+        last
+        handelPay={this.handelPayButton}
       >
-        <h1 className="page-title-hading">Get Quote</h1>
-        <img style={{ marginTop: "24px" }} src={logo} alt="amazone-logo" />
-        <p className="sellerPolicy-title">Seller's Policy</p>
+        <p className="sellerPolicy-title">eCommerce Seller's Insurance</p>
+        <img style={{ height: "24px" }} src={logo} alt="amazone-logo" />
         <div>
-          <span className="paragraphText">Starting at</span>
-          <p className="seller-amount">$50</p>
-          <p className="per-month">PER MONTH</p>
+          <p className="seller-amount my-qutes-amount">
+            <span className="doller-sign">$</span>50
+          </p>
+          <p className="per-month my-qutes-month">PER MONTH</p>
         </div>
-        <p style={{ textAlign: "initial", margin: "0" }}>Signature</p>
-        <SignatureCanvas
-          penColor="black"
-          canvasProps={{ width: 538, height: 150, className: "sigCanvas" }}
-        />
+        <div className="bottom-text-container">
+          <div>
+            <p className="paragraph-hading">Coverage</p>
+            <span className="paragraphText">
+              $1M worth of General Liability Insurance, covering third-party
+              bodily injury, property damage, and product liabilty.
+            </span>
+          </div>
+          <div className="last-paragraph">
+            <p className="paragraph-hading">Endorsements</p>
+            <span className="paragraphText">
+              The policy must include “Amazon.com, Inc., and its affiliates and
+              assignees” as additional insureds.
+            </span>
+          </div>
+        </div>
       </Tamplate>
     );
   }

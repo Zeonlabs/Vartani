@@ -48,7 +48,9 @@ export default class Policypage extends Component {
         <h1 className="page-title-hading">Policy Coverage</h1>
         <div className="slider-container">
           <p className="seller-amount policy-amount">
-            ${this.state.sliderText}M
+            <span className="dollar-sign">$</span>
+            {this.state.sliderText}
+            <span className="million-text">million</span>
           </p>
           <div className="slider-wrapper">
             <Slider

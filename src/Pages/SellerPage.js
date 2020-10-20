@@ -3,9 +3,10 @@ import Tamplate from "../Containers/Tamplate";
 import routes from "../router";
 import logo from "../Assets/Amazone.svg";
 // import { FormControl } from "@material-ui/core";
-import { Search } from "@material-ui/icons";
-import { Form, FormControl, InputGroup } from "react-bootstrap";
-import { Button } from "@material-ui/core";
+import { ExpandMore } from "@material-ui/icons";
+import Autocomplete from "@material-ui/lab/Autocomplete";
+import { Form } from "react-bootstrap";
+import { Button, TextField } from "@material-ui/core";
 import { withRouter } from "react-router-dom";
 
 class Sellerpage extends Component {
@@ -96,11 +97,14 @@ class Sellerpage extends Component {
         nextNavigate={routes.business}
         button
       >
-        <img src={logo} alt="amazone-logo" />
-        <p className="sellerPolicy-title">Seller's Policy</p>
+        {/* <img src={logo} alt="amazone-logo" /> */}
+        <p className="sellerPolicy-title">eCommerce Seller's Insurance</p>
+
         <div>
           <span className="paragraphText">Starting at</span>
-          <p className="seller-amount">$50</p>
+          <p className="seller-amount">
+            <span className="dollar-sign-sellerPage">$</span>30
+          </p>
           <p className="per-month">PER MONTH</p>
         </div>
         <Form
@@ -108,8 +112,12 @@ class Sellerpage extends Component {
           validated={this.state.validate}
           onSubmit={this.handleSubmit}
         >
-          <Form.Group controlId="validationCustomUsername">
-            <InputGroup className="mb-3 input-box-icon">
+          <Form.Group
+            controlId="validationCustomUsername"
+            className="sellerpage-form-wrapper"
+          >
+            {
+              /* <InputGroup className="input-box-icon ">
               <InputGroup.Prepend>
                 <InputGroup.Text
                   id="inputGroupPrepend"
@@ -121,13 +129,15 @@ class Sellerpage extends Component {
                       : "success-message"
                   }
                 >
-                  {<Search />}
+                  <img src={logo} alt="amazone-logo" />
+                  <span>Seller ID</span>
                 </InputGroup.Text>
               </InputGroup.Prepend>
               <FormControl
                 required
                 placeholder="Enter Seller ID as on Amazon USA"
                 // aria-label="Username"
+                className="sellerPage-input"
                 onChange={this.handelInputChnage}
                 type="text"
                 aria-describedby="inputGroupPrepend"
@@ -135,8 +145,34 @@ class Sellerpage extends Component {
               <Form.Control.Feedback type="invalid">
                 Please provide sellerId.
               </Form.Control.Feedback>
-              {/* <Form.Control.Feedback>Looks good!</Form.Control.Feedback> */}
-            </InputGroup>
+              {/* <Form.Control.Feedback>Looks good!</Form.Control.Feedback> */
+              // </InputGroup> */
+            }
+            <div className="left-side-image">
+              <img src={logo} alt="amazone-logo" />
+              <span>Seller ID</span>
+            </div>
+
+            <Autocomplete
+              freeSolo
+              id="free-solo-2-demo"
+              disableClearable
+              className="autoselect-dorpdown-wrapper"
+              options={top100Films.map((option) => option.title)}
+              renderInput={(params) => (
+                <>
+                  <TextField
+                    {...params}
+                    // label="Search input"
+                    margin="normal"
+                    variant="outlined"
+                    placeholder="A1P3JEITQENDBE"
+                    InputProps={{ ...params.InputProps, type: "search" }}
+                  />
+                  <ExpandMore className="expanded-svg" />
+                </>
+              )}
+            />
           </Form.Group>
           <Button
             variant="contained"
@@ -154,3 +190,10 @@ class Sellerpage extends Component {
 }
 
 export default withRouter(Sellerpage);
+
+const top100Films = [
+  { title: "The Shawshank Redemption", year: 1994 },
+  { title: "The Godfather", year: 1972 },
+  { title: "The Godfather: Part II", year: 1974 },
+  { title: "The Dark Knight", year: 2008 },
+];

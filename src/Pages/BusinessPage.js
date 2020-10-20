@@ -42,7 +42,7 @@ class Businesspage extends Component {
         backNavigate={routes.seller}
         button
       >
-        <h1 className="page-title-hading">Business Details</h1>
+        <h1 className="page-title-hading">Business</h1>
 
         <Bussinessform
           handleBack={this.handleBack}

@@ -23,7 +23,7 @@ export default class Productpage extends Component {
         backNavigate={routes.business}
         cardStyle="productTableCard"
       >
-        <h1 className="page-title-hading">Business Details</h1>
+        <h1 className="page-title-hading">Product Portfolio</h1>
         <div className="product-table-container">
           <ProductTable />
         </div>

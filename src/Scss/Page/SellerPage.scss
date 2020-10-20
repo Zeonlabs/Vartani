@@ -1,21 +1,26 @@
 .sellerPolicy-title {
-  font-size: 24px;
+  font-size: 18px;
   font-weight: normal;
-  margin: 8px 0 32px;
+  margin: 0px 0 22px;
 }
 
 .seller-amount {
-  font-size: 50px;
-  margin: 7px;
+  font-size: 40px;
+  margin: 2px;
+  .dollar-sign-sellerPage {
+    font-size: 20px;
+  }
 }
 
 .per-month {
-  font-size: 16px;
+  font-size: 12px;
   font-weight: 600;
   margin: 0 0 32px;
+  color: #8a8a8a;
 }
 
 .input-box-icon {
+  margin-bottom: 22px;
   .input-group-text {
     background-color: transparent;
     border-right: 0 !important;
@@ -25,7 +30,7 @@
   .form-control {
     border: 2px solid #d2d2d2;
     border-left: 0 !important;
-    height: 48px;
+    height: 42px;
     font-size: 18px;
     &::placeholder {
       color: #d2d2d2;
@@ -36,24 +41,42 @@
   }
 }
 
+.sellerPage-input {
+  border-radius: 4px !important;
+  border-top-left-radius: 0 !important;
+  border-bottom-left-radius: 0 !important;
+}
+
+// .was-validated .form-control:invalid:focus,
+// .form-control.is-invalid:focus .sellerPage-input  {
+//   box-shadow: 4px 0px 0px 0.2rem rgba(220, 53, 69, 0.25) !important;
+// }
+
+// .first-page-input-form {
+//   .was-validated .form-control:invalid:focus,
+//   .form-control.is-invalid:focus {
+
+//   }
+// }
+
 .form-control:focus {
   box-shadow: none;
 }
 
 .get-quotes-button {
-  height: 48px;
+  height: 42px;
   width: 100%;
   background-color: #145c9e !important;
   font-family: "Nunito" !important;
 }
 
 .bottom-text-container {
-  margin-top: 56px;
+  margin-top: 32px;
   text-align: justify;
 }
 
 .last-paragraph {
-  margin-top: 28px;
+  margin-top: 18px;
 }
 
 .sigCanvas {
@@ -70,4 +93,46 @@
 .success-message {
   border: 2px solid #28a745 !important;
   border-right: 0px !important;
+}
+
+.sellerpage-form-wrapper {
+  height: 60px;
+  display: flex;
+  border: 2px solid rgba(0, 0, 0, 0.23);
+  border-radius: 4px;
+  .MuiOutlinedInput-notchedOutline {
+    border: 0;
+  }
+  .left-side-image {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 35%;
+    padding: 9px;
+    height: 56px;
+    img {
+      height: 22px;
+      margin-top: 10px;
+    }
+    span {
+      font-size: 14px;
+      margin-top: 4px;
+    }
+  }
+  .autoselect-dorpdown-wrapper {
+    position: relative;
+    width: 65%;
+    .MuiFormControl-marginNormal {
+      margin: 0;
+    }
+    input {
+      color: #8a8a8a;
+      font-size: 16px;
+    }
+    .expanded-svg {
+      position: absolute;
+      top: 17px;
+      right: 28px;
+    }
+  }
 }

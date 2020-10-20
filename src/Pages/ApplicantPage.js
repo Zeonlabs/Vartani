@@ -49,14 +49,14 @@ export default class Applicantpage extends Component {
                 <Form.Control placeholder="Enter your first name" />
               </Form.Group>
               <Form.Group controlId="emaildAddress">
-                <Form.Label>Email Address</Form.Label>
+                <Form.Label>Email</Form.Label>
                 <Form.Control
                   type="email"
                   placeholder="Enter your first name"
                 />
               </Form.Group>
               <Form.Group controlId="phoneNumber">
-                <Form.Label>Phone Number</Form.Label>
+                <Form.Label>Phone</Form.Label>
                 <Form.Control
                   type="number"
                   maxLength={10}

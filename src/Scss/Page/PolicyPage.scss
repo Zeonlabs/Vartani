@@ -37,6 +37,13 @@
 }
 
 .policy-amount {
+  .dollar-sign {
+    font-size: 20px;
+  }
+  .million-text {
+    font-size: 16px;
+    margin-left: 2%;
+  }
   margin-top: 38px;
 }
 
@@ -51,4 +58,23 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   color: pink;
   opacity: 1;
   display: block;
+}
+
+.my-qutes-title {
+  margin-bottom: 16px !important  ;
+}
+
+.my-qutes-amount {
+  font-size: 42px;
+  .doller-sign {
+    font-size: 20px;
+  }
+}
+
+.my-qutes-month {
+  margin: 0 0 19px;
+}
+
+.get-discount {
+  margin-top: 12px !important;
 }

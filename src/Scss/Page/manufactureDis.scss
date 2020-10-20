@@ -1,0 +1,43 @@
+.manufacturingCard {
+  width: 678px;
+}
+
+.radio-form-wrapper {
+  .btn-secondary:not(:disabled):not(.disabled):active,
+  .btn-secondary:not(:disabled):not(.disabled).active,
+  .show > .btn-secondary.dropdown-toggle {
+    color: #fff;
+    background-color: #369efb;
+    border-color: #369efb;
+  }
+
+  .btn-secondary:not(:disabled):not(.disabled):active:focus,
+  .btn-secondary:not(:disabled):not(.disabled).active:focus,
+  .show > .btn-secondary.dropdown-toggle:focus {
+    box-shadow: none;
+  }
+
+  .btn-secondary {
+    color: #8a8a8a;
+    background-color: #fff;
+    border-color: #d2d2d2;
+  }
+  .btn-secondary:focus,
+  .btn-secondary.focus {
+    box-shadow: none;
+  }
+
+  .line-wrapper {
+    margin-top: 2%;
+  }
+
+  .col-sm-9 {
+    margin: auto;
+    font-size: 14px;
+    color: #333333;
+  }
+}
+
+.back-cutton-display {
+  display: none !important;
+}
