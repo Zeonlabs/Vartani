@@ -197,7 +197,7 @@ const headCells = [
     id: "manufacutrer",
     numeric: false,
     disablePadding: false,
-    label: "Manufacturer",
+    label: "MANUFACTURER",
   },
 ];
 

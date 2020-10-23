@@ -78,7 +78,7 @@ export default class Distribution extends Component {
                 variant="secondary"
                 name="plan"
                 value={radio.value}
-                checked={this.state.followed === radio.value}
+                checked={this.state.plan === radio.value}
                 onChange={this.handelRadioChange}
               >
                 {radio.name}

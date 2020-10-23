@@ -45,7 +45,7 @@ export default class Bussinessform extends Component {
               </Form.Group>
             </Form.Row>
 
-            <Form.Group controlId="registeredAddress">
+            <Form.Group style={{ padding: "0" }} controlId="registeredAddress">
               <Form.Label>Registered Business Address</Form.Label>
               <Form.Control placeholder="1234 Main St" />
             </Form.Group>

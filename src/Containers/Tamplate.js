@@ -10,6 +10,7 @@ import Applicantpage from "../Pages/ApplicantPage";
 import Myquotepage from "../Pages/MyquotePage";
 import routes from "../router";
 import logo from "../Assets/VartaniLogo.svg";
+import Demo from "../Assets/DemoLogo.svg";
 // import Typography from "@material-ui/core/Typography";
 
 function getSteps() {
@@ -19,7 +20,7 @@ function getSteps() {
     { title: "Product", component: <Productpage /> },
     { title: "Policy", component: <Policypage /> },
     { title: "Applicant", component: <Applicantpage /> },
-    { title: "My quote", component: <Myquotepage /> },
+    { title: "Quote", component: <Myquotepage /> },
   ];
 }
 
@@ -126,8 +127,11 @@ class Tamplate extends Component {
           <div className="logo-image">
             <img src={logo} alt="vartanilogo" />
           </div>
-          <div className="main-containt-container">
+          <div className="main-containt-container stepper-wrapper">
             <TopStepper activeStep={this.state.activeStep} steps={steps} />
+          </div>
+          <div className="demo-logo-image">
+            <img src={Demo} alt="demo logo" />
           </div>
         </div>
         <div className={`${this.props.cardStyle} main-containt-container`}>
@@ -154,9 +158,7 @@ class Tamplate extends Component {
                     color="primary"
                     className={`${this.props.nextBtnStyle} next-button-common`}
                     onClick={
-                      this.props.last
-                        ? this.props.handelPay
-                        : this.props.this.handleNext
+                      this.props.last ? this.props.handelPay : this.handleNext
                     }
                   >
                     {this.props.nextBtnText ? this.props.nextBtnText : "Next"}

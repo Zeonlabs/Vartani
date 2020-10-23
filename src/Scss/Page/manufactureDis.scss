@@ -29,6 +29,15 @@
 
   .line-wrapper {
     margin-top: 2%;
+    .col-sm-3 {
+      text-align: end;
+    }
+  }
+
+  .previous-button-common {
+    border-color: #d2d2d2 !important;
+    width: 96.23px;
+    color: #8a8a8a;
   }
 
   .col-sm-9 {

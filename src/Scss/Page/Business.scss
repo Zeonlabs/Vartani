@@ -2,24 +2,24 @@
   text-align: initial;
   margin-top: 18px;
   .form-label {
-    font-size: 12px;
+    font-size: 14px;
     font-weight: 400;
     margin: 0;
   }
   .form-group {
-    margin-bottom: 8px;
+    margin-bottom: 12px;
     padding-right: 8px;
     padding-left: 8px;
   }
-  .form-control {
+}
+.form-control {
+  color: #141414;
+  font-size: 14px;
+  font-family: "Nunito";
+  &::placeholder {
+    color: #8a8a8a;
+  }
+  &:focus {
     color: #141414;
-    font-size: 12px;
-    font-family: "Nunito";
-    &::placeholder {
-      color: #8a8a8a;
-    }
-    &:focus {
-      color: #141414;
-    }
   }
 }

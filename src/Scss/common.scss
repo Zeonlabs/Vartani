@@ -22,6 +22,12 @@ body {
     top: 2%;
     margin: auto 20px;
   }
+  .demo-logo-image {
+    position: absolute;
+    top: 2%;
+    right: 0;
+    margin: auto 20px;
+  }
 
   .header-title {
     h3 {
@@ -108,13 +114,17 @@ body {
         color: #8a8a8a;
       }
       .MuiStepLabel-label.MuiStepLabel-completed {
-        color: black;
+        color: #369efb;
       }
       .MuiTypography-body2 {
         font-size: 12px;
       }
     }
   }
+}
+
+.stepper-wrapper {
+  min-height: unset !important;
 }
 
 .footer-container {
@@ -147,7 +157,7 @@ body {
 
 .paragraph-hading {
   color: #141414;
-  font-size: 15px;
+  font-size: 14px;
   font-weight: 700;
   margin: 0;
 }
