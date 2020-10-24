@@ -68,18 +68,7 @@ class Tamplate extends Component {
     }
   };
 
-  // componentDidUpdate(prevProps, prevState, snapshot) { if (prevState.name !== this.state.name) { this.handler() } }
-
-  // Class Properties (Stage 3 Proposal)
-  // handler = () => { this.setState() }
   handleNext = () => {
-    // this.setState({
-    //   activeStep: this.state.activeStep + 1,
-    // });
-    // console.log(
-    //   "Tamplate -> handleNext -> this.state.activeStep",
-    //   this.state.activeStep
-    // );
     if (this.props.addSecondButton) {
       this.props.history.push(this.props.addSecondButton);
     } else {
@@ -87,23 +76,7 @@ class Tamplate extends Component {
     }
   };
 
-  // useStyles = makeStyles((theme) => ({
-  //   root: {
-  //     width: "100%",
-  //   },
-  //   backButton: {
-  //     marginRight: theme.spacing(1),
-  //   },
-  //   instructions: {
-  //     marginTop: theme.spacing(1),
-  //     marginBottom: theme.spacing(1),
-  //   },
-  // }));
-
   handleBack = () => {
-    // this.setState({
-    //   activeStep: this.state.activeStep - 1,
-    // });
     this.props.history.push(this.props.backNavigate);
   };
 

@@ -2,19 +2,47 @@ import React, { Component } from "react";
 import Tamplate from "../Containers/Tamplate";
 import routes from "../router";
 import logo from "../Assets/Amazone.svg";
+import { connect } from "react-redux";
 
-export default class Myquotepage extends Component {
+class Myquotepage extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
       lastPage: false,
+      sellerDetail: "",
+      amount: { direct: 50, discount: 0 },
     };
   }
 
-  componentDidMount() {
-    console.log(this.props);
-  }
+  //seller_premium
+  //seller_premium_discount
+  //seller_valuechain ----> "Manufacturing" , Distribution
+
+  componentDidMount = () => {
+    // console.log(
+    //   "Myquotepage -> componentDidMount -> this.props.sellerData.detailObject.business_details",
+    //   this.props.sellerData.detailObject.business_details
+    // );
+    this.setState({
+      sellerDetail:
+        localStorage.getItem("apicall") === "yes"
+          ? JSON.parse(localStorage.getItem("userDetails"))
+          : "",
+      amount: {
+        direct:
+          localStorage.getItem("apicall") === "yes"
+            ? JSON.parse(localStorage.getItem("userDetails")).seller_premium
+            : 50,
+        discount:
+          localStorage.getItem("apicall") === "yes"
+            ? JSON.parse(localStorage.getItem("userDetails"))
+                .seller_premium_discount
+            : 50,
+      },
+      lastPage: localStorage.getItem("apicall") === "no",
+    });
+  };
 
   handelPayButton = () => {
     console.log("Myquotepage -> handelPayButton -> data");
@@ -22,19 +50,19 @@ export default class Myquotepage extends Component {
       lastPage: true,
     });
   };
-  // }
-
-  // componentDidUpdate(prevProps, prevState, snapshot) { if (prevState.name !== this.state.name) { this.handler() } }
-
   render() {
     return (
       <Tamplate
         backNavigate={routes.applicant}
         nextBtnText="Pay"
         addSecondButton={
-          this.state.lastPage || this.props.match.params.id === "1"
+          this.state.lastPage ||
+          this.props.match.params.id === "1" ||
+          this.props.match.params.id === "12"
             ? false
-            : routes.manufacturing
+            : this.state.sellerDetail.seller_valuechain === "Manufacturing"
+            ? routes.manufacturing
+            : routes.distribution
         }
         nextBtnStyle="get-quotes-button"
         secondBtnStyle="get-discount"
@@ -44,9 +72,13 @@ export default class Myquotepage extends Component {
       >
         <p className="sellerPolicy-title">eCommerce Seller's Insurance</p>
         <img style={{ height: "24px" }} src={logo} alt="amazone-logo" />
-        <div>
+        <div style={{ marginTop: "6px" }}>
+          <span className="paragraphText">Starting at</span>
           <p className="seller-amount my-qutes-amount">
-            <span className="doller-sign">$</span>50
+            <span className="doller-sign">$</span>
+            {this.props.match.params.id === "12"
+              ? this.state.amount.discount
+              : this.state.amount.direct || 50}
           </p>
           <p className="per-month my-qutes-month">PER MONTH</p>
         </div>
@@ -70,3 +102,7 @@ export default class Myquotepage extends Component {
     );
   }
 }
+
+const mapStateToProps = (state) => ({ ...state.Test });
+
+export default connect(mapStateToProps)(Myquotepage);

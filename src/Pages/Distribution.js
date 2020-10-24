@@ -15,24 +15,23 @@ export default class Distribution extends Component {
     };
   }
 
-  componentDidMount() {
-    // console.log("asdasdasdasd", this.props);
-  }
-
   handleNext = (e) => {
     e.preventDefault();
+    const { radioValue, plan } = this.state;
+    let discount = 0;
+    if (radioValue === "0" && plan === "0") {
+      discount = 0;
+    } else {
+      discount = 1;
+    }
     this.props.history.push({
-      pathname: generatePath(routes.quotes, { id: 1 }),
+      pathname: generatePath(routes.quotes, { id: discount ? 12 : 1 }),
     });
   };
 
   handleBack = () => {
-    // this.setState({
-    //   activeStep: this.state.activeStep - 1,
-    // });
-    this.props.history.push(routes.manufacturing);
+    this.props.history.push(routes.quotes);
   };
-  // }
 
   handelRadioChange = (e) => {
     this.setState({

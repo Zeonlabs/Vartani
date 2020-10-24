@@ -3,6 +3,7 @@ import Tamplate from "../Containers/Tamplate";
 import { Button } from "@material-ui/core";
 import routes from "../router";
 import { ButtonGroup, Col, Row, ToggleButton } from "react-bootstrap";
+import { generatePath } from "react-router-dom";
 
 export default class Manufacturingpage extends Component {
   constructor(props) {
@@ -22,21 +23,27 @@ export default class Manufacturingpage extends Component {
 
   handleNext = (e) => {
     e.preventDefault();
-    // console.log("Businesspage -> handleNext -> e", e);
-    // this.setState({
-    //   activeStep: this.state.activeStep + 1,
-    // });
-
-    this.props.history.push(routes.distribution);
+    const { radioValue, followed, manager, supplier, plan } = this.state;
+    let discount = 0;
+    if (
+      radioValue === "0" &&
+      followed === "0" &&
+      manager === "0" &&
+      supplier === "0" &&
+      plan === "0"
+    ) {
+      discount = 0;
+    } else {
+      discount = 1;
+    }
+    this.props.history.push({
+      pathname: generatePath(routes.quotes, { id: discount ? 12 : 1 }),
+    });
   };
 
   handleBack = () => {
-    // this.setState({
-    //   activeStep: this.state.activeStep - 1,
-    // });
     this.props.history.push(routes.quotes);
   };
-  // }
 
   handelRadioChange = (e) => {
     this.setState({

@@ -1,5 +1,6 @@
 // import { Button } from "@material-ui/core";
 import React, { Component } from "react";
+import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
 import Tamplate from "../Containers/Tamplate";
 import routes from "../router";
@@ -9,32 +10,32 @@ class Businesspage extends Component {
   constructor(props) {
     super(props);
 
-    this.state = {};
+    this.state = { sellerDetail: {} };
   }
 
-  // componentDidMount() {
-
-  // }
+  componentDidMount = () => {
+    // this.setState({
+    //   sellerDetail: this.props.sellerData
+    //     ? this.props.sellerData.detailObject.business_details
+    //     : {},
+    // });
+    this.setState({
+      sellerDetail:
+        localStorage.getItem("apicall") === "yes"
+          ? JSON.parse(localStorage.getItem("userDetails"))
+          : {},
+    });
+  };
 
   handleNext = (e) => {
     e.preventDefault();
-    // console.log("Businesspage -> handleNext -> e", e);
-    // this.setState({
-    //   activeStep: this.state.activeStep + 1,
-    // });
 
     this.props.history.push(routes.product);
   };
 
   handleBack = () => {
-    // this.setState({
-    //   activeStep: this.state.activeStep - 1,
-    // });
     this.props.history.push(routes.seller);
   };
-
-  // componentDidUpdate(prevProps, prevState, snapshot) { if (prevState.name !== this.state.name) { this.handler() } }
-
   render() {
     return (
       <Tamplate
@@ -47,10 +48,13 @@ class Businesspage extends Component {
         <Bussinessform
           handleBack={this.handleBack}
           handleNext={this.handleNext}
+          sellerDetail={this.state.sellerDetail}
         />
       </Tamplate>
     );
   }
 }
 
-export default withRouter(Businesspage);
+const mapStateToProps = (state) => ({ ...state.Test });
+
+export default withRouter(connect(mapStateToProps)(Businesspage));

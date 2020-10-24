@@ -11,28 +11,14 @@ export default class Applicantpage extends Component {
     this.state = {};
   }
 
-  // componentDidMount() {
-
   handleNext = (e) => {
     e.preventDefault();
-    // console.log("Businesspage -> handleNext -> e", e);
-    // this.setState({
-    //   activeStep: this.state.activeStep + 1,
-    // });
-
     this.props.history.push(routes.quotes);
   };
 
   handleBack = () => {
-    // this.setState({
-    //   activeStep: this.state.activeStep - 1,
-    // });
     this.props.history.push(routes.policy);
   };
-  // }
-
-  // componentDidUpdate(prevProps, prevState, snapshot) { if (prevState.name !== this.state.name) { this.handler() } }
-
   render() {
     return (
       <Tamplate button>
@@ -42,17 +28,17 @@ export default class Applicantpage extends Component {
             <Form onSubmit={this.handleNext}>
               <Form.Group controlId="firstName">
                 <Form.Label>First Name</Form.Label>
-                <Form.Control placeholder="Enter your first name" />
+                <Form.Control placeholder="John" />
               </Form.Group>
               <Form.Group controlId="lastName">
                 <Form.Label>Last Name</Form.Label>
-                <Form.Control placeholder="Enter your first name" />
+                <Form.Control placeholder="Doe" />
               </Form.Group>
               <Form.Group controlId="emaildAddress">
                 <Form.Label>Email</Form.Label>
                 <Form.Control
                   type="email"
-                  placeholder="Enter your first name"
+                  placeholder="john.doe@business.com"
                 />
               </Form.Group>
               <Form.Group controlId="phoneNumber">
@@ -60,14 +46,13 @@ export default class Applicantpage extends Component {
                 <Form.Control
                   type="number"
                   maxLength={10}
-                  placeholder="Enter your phone number"
+                  placeholder="818-292-0571"
                   className="phone-number-field"
                 />
               </Form.Group>
 
               <div className="bottom-button-wrapper">
                 <Button
-                  // disabled={}
                   onClick={this.handleBack}
                   className="previous-button-common"
                 >
@@ -78,7 +63,6 @@ export default class Applicantpage extends Component {
                   color="primary"
                   type="submit"
                   className="next-button-common"
-                  // onClick={this.props.handleNext}
                 >
                   Next
                 </Button>

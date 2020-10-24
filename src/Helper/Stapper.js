@@ -14,18 +14,6 @@ const TopStepper = (props) => {
           </Step>
         ))}
       </Stepper>
-      <div>
-        {/* {activeStep === steps.length ? (
-          <div>
-            <Typography className={classes.instructions}>
-              All steps completed
-            </Typography>
-            <Button onClick={handleReset}>Reset</Button>
-          </div>
-        ) : ( */}
-
-        {/* )} */}
-      </div>
     </div>
   );
 };

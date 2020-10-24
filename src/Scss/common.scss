@@ -156,15 +156,16 @@ body {
 }
 
 .paragraph-hading {
-  color: #141414;
+  color: #333333;
   font-size: 14px;
-  font-weight: 700;
+  font-weight: 400;
   margin: 0;
 }
 
 .page-title-hading {
   font-size: 18px;
-  font-weight: 600;
+  font-weight: 400;
+  color: #333333;
   margin: 0;
 }
 
@@ -194,4 +195,16 @@ body {
 
 .productTableCard {
   width: 900px;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
 }

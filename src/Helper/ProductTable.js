@@ -9,181 +9,26 @@ import TableContainer from "@material-ui/core/TableContainer";
 import TableHead from "@material-ui/core/TableHead";
 import TablePagination from "@material-ui/core/TablePagination";
 import TableRow from "@material-ui/core/TableRow";
-// import TableSortLabel from "@material-ui/core/TableSortLabel";
 import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
 import Paper from "@material-ui/core/Paper";
 import Checkbox from "@material-ui/core/Checkbox";
 import IconButton from "@material-ui/core/IconButton";
 import Tooltip from "@material-ui/core/Tooltip";
-// import FormControlLabel from "@material-ui/core/FormControlLabel";
-// import Switch from "@material-ui/core/Switch";
 import DeleteIcon from "@material-ui/icons/Delete";
 import FilterListIcon from "@material-ui/icons/FilterList";
-import Sample from "../Assets/sample.png";
+
 import LinkSvg from "../Assets/link.svg";
-
-const rows = [
-  {
-    id: 1,
-    link: "https://www.amazon.com/sp?seller=A2OWUYLA50HX3S",
-    asin: "B07238WLLR",
-    image: Sample,
-    name:
-      "Berri Fit Dragon Fruit Organic Sports Drink Alternative With Natural",
-    brand: "Berri Fit",
-    manufacutrer: "Berri Pro Inc.",
-  },
-  {
-    id: 2,
-    link: "https://www.amazon.com/sp?seller=A2OWUYLA50HX3S",
-    asin: "B07238WLLR",
-    image: Sample,
-    name:
-      "Berri Fit Dragon Fruit Organic Sports Drink Alternative With Natural",
-    brand: "Berri Fit",
-    manufacutrer: "Berri Pro Inc.",
-  },
-  {
-    id: 3,
-    link: "https://www.amazon.com/sp?seller=A2OWUYLA50HX3S",
-    asin: "B07238WLLR",
-    image: Sample,
-    name:
-      "Berri Fit Dragon Fruit Organic Sports Drink Alternative With Natural",
-    brand: "Berri Fit",
-    manufacutrer: "Berri Pro Inc.",
-  },
-  {
-    id: 4,
-    link: "https://www.amazon.com/sp?seller=A2OWUYLA50HX3S",
-    asin: "B07238WLLR",
-    image: Sample,
-    name:
-      "Berri Fit Dragon Fruit Organic Sports Drink Alternative With Natural",
-    brand: "Berri Fit",
-    manufacutrer: "Berri Pro Inc.",
-  },
-  {
-    id: 5,
-    link: "https://www.amazon.com/sp?seller=A2OWUYLA50HX3S",
-    asin: "B07238WLLR",
-    image: Sample,
-    name:
-      "Berri Fit Dragon Fruit Organic Sports Drink Alternative With Natural",
-    brand: "Berri Fit",
-    manufacutrer: "Berri Pro Inc.",
-  },
-  {
-    id: 6,
-    link: "https://www.amazon.com/sp?seller=A2OWUYLA50HX3S",
-    asin: "B07238WLLR",
-    image: Sample,
-    name:
-      "Berri Fit Dragon Fruit Organic Sports Drink Alternative With Natural",
-    brand: "Berri Fit",
-    manufacutrer: "Berri Pro Inc.",
-  },
-  {
-    id: 7,
-    link: "https://www.amazon.com/sp?seller=A2OWUYLA50HX3S",
-    asin: "B07238WLLR",
-    image: Sample,
-    name:
-      "Berri Fit Dragon Fruit Organic Sports Drink Alternative With Natural",
-    brand: "Berri Fit",
-    manufacutrer: "Berri Pro Inc.",
-  },
-  {
-    id: 8,
-    link: "https://www.amazon.com/sp?seller=A2OWUYLA50HX3S",
-    asin: "B07238WLLR",
-    image: Sample,
-    name:
-      "Berri Fit Dragon Fruit Organic Sports Drink Alternative With Natural",
-    brand: "Berri Fit",
-    manufacutrer: "Berri Pro Inc.",
-  },
-  {
-    id: 9,
-    link: "https://www.amazon.com/sp?seller=A2OWUYLA50HX3S",
-    asin: "B07238WLLR",
-    image: Sample,
-    name:
-      "Berri Fit Dragon Fruit Organic Sports Drink Alternative With Natural",
-    brand: "Berri Fit",
-    manufacutrer: "Berri Pro Inc.",
-  },
-  {
-    id: 10,
-    link: "https://www.amazon.com/sp?seller=A2OWUYLA50HX3S",
-    asin: "B07238WLLR",
-    image: Sample,
-    name:
-      "Berri Fit Dragon Fruit Organic Sports Drink Alternative With Natural",
-    brand: "Berri Fit",
-    manufacutrer: "Berri Pro Inc.",
-  },
-  {
-    id: 11,
-    link: "https://www.amazon.com/sp?seller=A2OWUYLA50HX3S",
-    asin: "B07238WLLR",
-    image: Sample,
-    name:
-      "Berri Fit Dragon Fruit Organic Sports Drink Alternative With Natural",
-    brand: "Berri Fit",
-    manufacutrer: "Berri Pro Inc.",
-  },
-  {
-    id: 12,
-    link: "https://www.amazon.com/sp?seller=A2OWUYLA50HX3S",
-    asin: "B07238WLLR",
-    image: Sample,
-    name:
-      "Berri Fit Dragon Fruit Organic Sports Drink Alternative With Natural",
-    brand: "Berri Fit",
-    manufacutrer: "Berri Pro Inc.",
-  },
-  {
-    id: 13,
-    link: "https://www.amazon.com/sp?seller=A2OWUYLA50HX3S",
-    asin: "B07238WLLR",
-    image: Sample,
-    name:
-      "Berri Fit Dragon Fruit Organic Sports Drink Alternative With Natural",
-    brand: "Berri Fit",
-    manufacutrer: "Berri Pro Inc.",
-  },
-];
-
-// function descendingComparator(a, b, orderBy) {
-//   if (b[orderBy] < a[orderBy]) {
-//     return -1;
-//   }
-//   if (b[orderBy] > a[orderBy]) {
-//     return 1;
-//   }
-//   return 0;
-// }
-
-// function getComparator(order, orderBy) {
-//   return order === "desc"
-//     ? (a, b) => descendingComparator(a, b, orderBy)
-//     : (a, b) => -descendingComparator(a, b, orderBy);
-// }
+import { SampleArray } from "./SampleTableArray";
 
 function stableSort(array) {
   const stabilizedThis = array.map((el, index) => [el, index]);
-  // stabilizedThis.sort((a, b) => {
-  //   const order = comparator(a[0], b[0]);
-  //   if (order !== 0) return order;
-  //   return a[1] - b[1];
-  // });
+
   return stabilizedThis.map((el) => el[0]);
 }
 
 const headCells = [
-  { id: "link", numeric: false, disablePadding: false, label: "LINK" },
+  { id: "asin_link", numeric: false, disablePadding: false, label: "LINK" },
   { id: "asin", numeric: false, disablePadding: false, label: "ASIN" },
   {
     id: "image",
@@ -192,9 +37,14 @@ const headCells = [
     label: "IMAGE",
   },
   { id: "name", numeric: false, disablePadding: false, label: "NAME" },
-  { id: "category", numeric: false, disablePadding: false, label: "BRAND" },
   {
-    id: "manufacutrer",
+    id: "asin_brand_name",
+    numeric: false,
+    disablePadding: false,
+    label: "BRAND",
+  },
+  {
+    id: "manufacturer",
     numeric: false,
     disablePadding: false,
     label: "MANUFACTURER",
@@ -202,18 +52,7 @@ const headCells = [
 ];
 
 function EnhancedTableHead(props) {
-  const {
-    // classes,
-    onSelectAllClick,
-    // order,
-    // orderBy,
-    numSelected,
-    rowCount,
-    // onRequestSort,
-  } = props;
-  // const createSortHandler = (property) => (event) => {
-  //   onRequestSort(event, property);
-  // };
+  const { onSelectAllClick, numSelected, rowCount } = props;
 
   return (
     <TableHead>
@@ -223,13 +62,7 @@ function EnhancedTableHead(props) {
             key={headCell.id}
             align={headCell.numeric ? "right" : "left"}
             padding={headCell.disablePadding ? "none" : "default"}
-            // sortDirection={orderBy === headCell.id ? order : false}
           >
-            {/* <TableSortLabel
-              active={orderBy === headCell.id}
-              direction={orderBy === headCell.id ? order : "asc"}
-              onClick={createSortHandler(headCell.id)}
-            > */}
             {headCell.label}
           </TableCell>
         ))}
@@ -351,20 +184,35 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function ProductTable() {
+export default function ProductTable(props) {
+  const sellerItemData = [];
+  const updatedData =
+    // localStorage.getItem("apicall") === "yes"
+    //   ? props.producteData.map((value, index) =>
+    //       sellerItemData.push({
+    //         id: index,
+    //         ...value,
+    //       })
+    //     )
+    //   : "";
+    props.apicall
+      ? props.producteData.map((value, index) =>
+          sellerItemData.push({
+            id: index,
+            ...value,
+          })
+        )
+      : "";
+  console.log("ProductTable -> updatedData", updatedData);
+  const rows = !props.apicall ? SampleArray : sellerItemData;
+  // localStorage.getItem("apicall") === "yes" ? SampleArray : sellerItemData;
   const classes = useStyles();
   // const [order, setOrder] = React.useState("asc");
   // const [orderBy, setOrderBy] = React.useState("calories");
   const [selected, setSelected] = React.useState([]);
   const [page, setPage] = React.useState(0);
-  // const [dense, setDense] = React.useState(false);
-  const [rowsPerPage, setRowsPerPage] = React.useState(5);
 
-  // const handleRequestSort = (event, property) => {
-  //   const isAsc = orderBy === property && order === "asc";
-  //   setOrder(isAsc ? "desc" : "asc");
-  //   setOrderBy(property);
-  // };
+  const [rowsPerPage, setRowsPerPage] = React.useState(5);
 
   const handleSelectAllClick = (event) => {
     if (event.target.checked) {
@@ -398,7 +246,7 @@ export default function ProductTable() {
   const handelRedirect = (data) => {
     const url = data.split(":");
     console.log("handelRedirect -> url", url);
-    window.location.replace(url[1]);
+    window.location.href = data;
   };
 
   const handleChangePage = (event, newPage) => {
@@ -409,11 +257,6 @@ export default function ProductTable() {
     setRowsPerPage(parseInt(event.target.value, 10));
     setPage(0);
   };
-
-  // const handleChangeDense = (event) => {
-  //   setDense(event.target.checked);
-  // };
-
   const isSelected = (id) => selected.indexOf(id) !== -1;
 
   const emptyRows =
@@ -422,7 +265,6 @@ export default function ProductTable() {
   return (
     <div className={classes.root}>
       <Paper className={classes.paper}>
-        {/* <EnhancedTableToolbar numSelected={selected.length} /> */}
         <TableContainer>
           <Table
             className={classes.table}
@@ -433,10 +275,7 @@ export default function ProductTable() {
             <EnhancedTableHead
               classes={classes}
               numSelected={selected.length}
-              // order={order}
-              // orderBy={orderBy}
               onSelectAllClick={handleSelectAllClick}
-              // onRequestSort={handleRequestSort}
               rowCount={rows.length}
             />
             <TableBody>
@@ -456,33 +295,31 @@ export default function ProductTable() {
                       key={row.id}
                       selected={isItemSelected}
                     >
-                      <TableCell
-                        // component="th"
-                        // id={labelId}
-                        // scope="row"
-                        // padding="none"
-                        width="5%"
-                        align="center"
-                      >
+                      <TableCell width="5%" align="center">
                         <img
-                          onClick={() => handelRedirect(row.link)}
+                          style={{ cursor: "pointer" }}
+                          onClick={() => handelRedirect(row.asin_link)}
                           src={LinkSvg}
                           alt="link"
                         />
-                        {/* {row.name} */}
                       </TableCell>
                       <TableCell align="left">{row.asin}</TableCell>
                       <TableCell align="left">
-                        <img src={row.image} alt="product" />
+                        <img
+                          height="66px"
+                          width="66px"
+                          src={row.image}
+                          alt="product"
+                        />
                       </TableCell>
                       <TableCell align="left" width="40%">
                         {row.name}
                       </TableCell>
                       <TableCell align="left" width="12%">
-                        {row.brand}
+                        {row.asin_brand_name}
                       </TableCell>
                       <TableCell align="left" width="18%">
-                        {row.manufacutrer}
+                        {row.manufacturer}
                       </TableCell>
                       <TableCell padding="checkbox">
                         <Checkbox
@@ -511,10 +348,6 @@ export default function ProductTable() {
           onChangeRowsPerPage={handleChangeRowsPerPage}
         />
       </Paper>
-      {/* <FormControlLabel
-        control={<Switch checked={dense} onChange={handleChangeDense} />}
-        label="Dense padding"
-      /> */}
     </div>
   );
 }
