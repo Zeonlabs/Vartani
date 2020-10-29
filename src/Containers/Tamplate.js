@@ -98,7 +98,7 @@ class Tamplate extends Component {
       <div className="main-containor">
         <div className="header">
           <div className="logo-image">
-            <img src={logo} alt="vartanilogo" />
+            <img src={logo} alt="vartanilogo" width="22%" />
           </div>
           <div className="main-containt-container stepper-wrapper">
             <TopStepper activeStep={this.state.activeStep} steps={steps} />

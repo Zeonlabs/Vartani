@@ -64,9 +64,6 @@ class Sellerpage extends Component {
 
   componentDidUpdate = (prevProps) => {
     if (this.props.sellerData !== prevProps.sellerData) {
-      this.setState({
-        loading: false,
-      });
       localStorage.setItem(
         "userDetails",
         JSON.stringify(this.props.sellerData.detailObject.business_details)
@@ -76,7 +73,12 @@ class Sellerpage extends Component {
         JSON.stringify(this.props.sellerData.detailObject.product_details)
       );
       localStorage.setItem("apicall", "yes");
-      this.props.history.push(routes.business);
+      setTimeout(() => {
+        this.setState({
+          loading: false,
+        });
+        this.props.history.push(routes.business);
+      }, 5000);
     }
   };
 

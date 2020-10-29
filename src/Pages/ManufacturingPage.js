@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import Tamplate from "../Containers/Tamplate";
 import { Button } from "@material-ui/core";
 import routes from "../router";
+import RemoveIcon from "@material-ui/icons/Remove";
+import AddIcon from "@material-ui/icons/Add";
 import { ButtonGroup, Col, Row, ToggleButton } from "react-bootstrap";
 import { generatePath } from "react-router-dom";
 
@@ -16,6 +18,7 @@ export default class Manufacturingpage extends Component {
       manager: "0",
       supplier: "0",
       plan: "0",
+      years: 3,
     };
   }
 
@@ -39,6 +42,22 @@ export default class Manufacturingpage extends Component {
     this.props.history.push({
       pathname: generatePath(routes.quotes, { id: discount ? 12 : 1 }),
     });
+  };
+
+  plusIcon = () => {
+    if (this.state.years < 10) {
+      this.setState({
+        years: this.state.years + 1,
+      });
+    }
+  };
+
+  minusIcon = () => {
+    if (this.state.years > 0) {
+      this.setState({
+        years: this.state.years - 1,
+      });
+    }
   };
 
   handleBack = () => {
@@ -100,12 +119,16 @@ export default class Manufacturingpage extends Component {
       {
         quetion: "How long are quality control records kept?",
         radio: (
-          <Button
+          <div
             // disabled={}
             className="previous-button-common"
           >
-            3 Years
-          </Button>
+            <div className="number-button-wrapper">
+              <RemoveIcon className="icon-number" onClick={this.minusIcon} />
+              {this.state.years} Years
+              <AddIcon className="icon-number" onClick={this.plusIcon} />
+            </div>
+          </div>
         ),
       },
       {
@@ -185,7 +208,9 @@ export default class Manufacturingpage extends Component {
                   <Col sm={9}>
                     <span>{value.quetion}</span>
                   </Col>
-                  <Col sm={3}>{value.radio}</Col>
+                  <Col sm={3} className="button-width">
+                    {value.radio}
+                  </Col>
                 </Row>
               ))}
             </div>

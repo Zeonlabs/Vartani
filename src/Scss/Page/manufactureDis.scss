@@ -30,14 +30,32 @@
   .line-wrapper {
     margin-top: 2%;
     .col-sm-3 {
-      text-align: end;
+      text-align: -webkit-right;
+      .btn-group {
+        width: 84%;
+      }
     }
   }
 
+  .MuiButton-text {
+    padding: 6px 0px;
+  }
   .previous-button-common {
     border-color: #d2d2d2 !important;
-    width: 96.23px;
+    width: 84%;
     color: #8a8a8a;
+    padding: 9px 0;
+    .number-button-wrapper {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      .icon-number {
+        height: 1rem;
+        width: 1rem;
+        cursor: pointer;
+      }
+    }
   }
 
   .col-sm-9 {

@@ -6,6 +6,7 @@ import marks from "../Helper/SliderMarks";
 // import getTodayDate from "../Helper/TodaysDate";
 import routes from "../router";
 import "moment/locale/it.js";
+import getTodayDate from "../Helper/TodaysDate";
 
 export default class Policypage extends Component {
   constructor(props) {
@@ -54,7 +55,7 @@ export default class Policypage extends Component {
           <div className="startDate-container">
             <Form.Group controlId="startDate">
               <Form.Label>Start Date</Form.Label>
-              <Form.Control type="date" placeholder="dd-mmm-yyyy" />
+              <Form.Control type="date" defaultValue={getTodayDate()} />
             </Form.Group>
           </div>
         </div>

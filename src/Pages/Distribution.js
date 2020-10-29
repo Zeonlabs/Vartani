@@ -102,7 +102,9 @@ export default class Distribution extends Component {
                   <Col sm={9}>
                     <span>{value.quetion}</span>
                   </Col>
-                  <Col sm={3}>{value.radio}</Col>
+                  <Col sm={3} className="button-width">
+                    {value.radio}
+                  </Col>
                 </Row>
               ))}
             </div>

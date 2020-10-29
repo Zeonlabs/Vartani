@@ -35,23 +35,31 @@ export default class Bussinessform extends Component {
               <Form.Group as={Col} controlId="sellerId">
                 <Form.Label>Seller ID</Form.Label>
                 <Form.Control
-                  value={seller_id || ""}
+                  name="sellerId"
+                  onChange={this.props.handelOnChange}
+                  value={this.props.defaultValue.sellerId || seller_id}
                   placeholder="A1P3JEITQENDBE"
                 />
               </Form.Group>
               <Form.Group as={Col} controlId="storename">
                 <Form.Label>Store Name</Form.Label>
                 <Form.Control
-                  value={seller_store_name || ""}
+                  name="storeName"
+                  onChange={this.props.handelOnChange}
+                  value={this.props.defaultValue.storeName || seller_store_name}
                   placeholder="Berri Fit®"
                 />
               </Form.Group>
             </Form.Row>
             <Form.Row>
-              <Form.Group as={Col} controlId="business">
+              <Form.Group as={Col} controlId="bussiness">
                 <Form.Label>Business Name</Form.Label>
                 <Form.Control
-                  value={seller_business_name || ""}
+                  name="bussiness"
+                  onChange={this.props.handelOnChange}
+                  value={
+                    this.props.defaultValue.bussiness || seller_business_name
+                  }
                   placeholder="Berri Pro Inc."
                 />
               </Form.Group>
@@ -59,9 +67,15 @@ export default class Bussinessform extends Component {
                 <Form.Label>Business Entity Type</Form.Label>
                 <Form.Control
                   as="select"
-                  value={seller_business_incorporation_type || ""}
-                  placeholder="Corporation"
+                  name="corporation"
+                  onChange={this.props.handelOnChange}
+                  value={
+                    this.props.defaultValue.corporation ||
+                    seller_business_incorporation_type
+                  }
+                  placeholder=""
                 >
+                  <option value="" disabled selected></option>
                   <option>Corporation</option>
                   <option>Individual</option>
                   <option>LLC</option>
@@ -72,7 +86,9 @@ export default class Bussinessform extends Component {
             <Form.Group style={{ padding: "0" }} controlId="registeredAddress">
               <Form.Label>Registered Business Address</Form.Label>
               <Form.Control
-                value={street_address || ""}
+                value={this.props.defaultValue.address || street_address}
+                name="address"
+                onChange={this.props.handelOnChange}
                 placeholder="3159 Donald Douglas Loop S Ste 300"
               />
             </Form.Group>
@@ -80,21 +96,41 @@ export default class Bussinessform extends Component {
             <Form.Row>
               <Form.Group as={Col} controlId="city">
                 <Form.Label>City</Form.Label>
-                <Form.Control value={city || ""} placeholder="Santa Monica" />
+                <Form.Control
+                  name="city"
+                  onChange={this.props.handelOnChange}
+                  value={this.props.defaultValue.city || city}
+                  placeholder="Santa Monica"
+                />
               </Form.Group>
               <Form.Group as={Col} controlId="zip">
                 <Form.Label>Zip</Form.Label>
-                <Form.Control value={zip_code || ""} placeholder="90405" />
+                <Form.Control
+                  name="zip"
+                  onChange={this.props.handelOnChange}
+                  value={this.props.defaultValue.zip || zip_code}
+                  placeholder="90405"
+                />
               </Form.Group>
             </Form.Row>
             <Form.Row>
               <Form.Group as={Col} controlId="state">
                 <Form.Label>State</Form.Label>
-                <Form.Control value={state || ""} placeholder="California" />
+                <Form.Control
+                  name="state"
+                  onChange={this.props.handelOnChange}
+                  value={this.props.defaultValue.state || state}
+                  placeholder="California"
+                />
               </Form.Group>
               <Form.Group as={Col} controlId="country">
                 <Form.Label>Country</Form.Label>
-                <Form.Control value={country || ""} placeholder="US" />
+                <Form.Control
+                  name="country"
+                  onChange={this.props.handelOnChange}
+                  value={this.props.defaultValue.country || country}
+                  placeholder="US"
+                />
               </Form.Group>
             </Form.Row>
             <Form.Row>
@@ -102,6 +138,8 @@ export default class Bussinessform extends Component {
                 <Form.Label>Date of Establishment</Form.Label>
                 <Form.Control
                   type="date"
+                  name="date"
+                  onChange={this.props.handelOnChange}
                   // defaultValue={getTodayDate()}
                   placeholder="dd-mmm-yyyy"
                 />
@@ -111,9 +149,14 @@ export default class Bussinessform extends Component {
                 <Form.Label>Expected Annual Revenue (USD)</Form.Label>
                 <Form.Control
                   as="select"
-                  value={expected_annual_revenue || ""}
-                  placeholder="Less than 10,000"
+                  name="revenue"
+                  onChange={this.props.handelOnChange}
+                  value={
+                    this.props.defaultValue.revenue || expected_annual_revenue
+                  }
+                  placeholder=""
                 >
+                  <option value="" disabled selected></option>
                   <option>Less than 10,000</option>
                   <option>10,001 to 50,000</option>
                   <option>50,001 to 100,000</option>

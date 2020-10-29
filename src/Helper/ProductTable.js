@@ -203,7 +203,7 @@ export default function ProductTable(props) {
           })
         )
       : "";
-  console.log("ProductTable -> updatedData", updatedData);
+  console.info("ProductTable -> updatedData", updatedData);
   const rows = !props.apicall ? SampleArray : sellerItemData;
   // localStorage.getItem("apicall") === "yes" ? SampleArray : sellerItemData;
   const classes = useStyles();
@@ -239,14 +239,15 @@ export default function ProductTable(props) {
         selected.slice(selectedIndex + 1)
       );
     }
-
+    props.handelSelected(newSelected);
     setSelected(newSelected);
   };
 
   const handelRedirect = (data) => {
     const url = data.split(":");
     console.log("handelRedirect -> url", url);
-    window.location.href = data;
+    // window.location.href = data;
+    window.open(data, "_blank");
   };
 
   const handleChangePage = (event, newPage) => {
