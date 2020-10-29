@@ -114,7 +114,7 @@ export default class Applicantpage extends Component {
                   name="name"
                   onChange={this.onChange}
                   value={this.state.name}
-                  placeholder="John"
+                  placeholder="e.g. John"
                 />
               </Form.Group>
               <Form.Group controlId="lastName">
@@ -123,7 +123,7 @@ export default class Applicantpage extends Component {
                   name="lname"
                   onChange={this.onChange}
                   value={this.state.lname}
-                  placeholder="Doe"
+                  placeholder="e.g. Doe"
                 />
               </Form.Group>
               <Form.Group controlId="emaildAddress">
@@ -133,7 +133,7 @@ export default class Applicantpage extends Component {
                   name="email"
                   onChange={this.onChange}
                   value={this.state.email}
-                  placeholder="john.doe@business.com"
+                  placeholder="e.g. john.doe@business.com"
                 />
               </Form.Group>
               <Form.Group controlId="phoneNumber">
@@ -144,7 +144,7 @@ export default class Applicantpage extends Component {
                   name="phn"
                   onChange={this.onChange}
                   value={this.state.phn}
-                  placeholder="818-292-0571"
+                  placeholder="e.g. 818-292-0571"
                   className="phone-number-field"
                 />
               </Form.Group>

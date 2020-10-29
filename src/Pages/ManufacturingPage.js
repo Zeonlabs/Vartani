@@ -5,7 +5,7 @@ import routes from "../router";
 import RemoveIcon from "@material-ui/icons/Remove";
 import AddIcon from "@material-ui/icons/Add";
 import { ButtonGroup, Col, Row, ToggleButton } from "react-bootstrap";
-import { generatePath } from "react-router-dom";
+// import { generatePath } from "react-router-dom";
 
 export default class Manufacturingpage extends Component {
   constructor(props) {
@@ -39,9 +39,11 @@ export default class Manufacturingpage extends Component {
     } else {
       discount = 1;
     }
-    this.props.history.push({
-      pathname: generatePath(routes.quotes, { id: discount ? 12 : 1 }),
-    });
+    this.props.history.push(routes.quotes);
+    localStorage.setItem("id", discount ? 12 : 1);
+    //   {
+    //   pathname: generatePath(routes.quotes, { id: discount ? 12 : 1 }),
+    // });
   };
 
   plusIcon = () => {

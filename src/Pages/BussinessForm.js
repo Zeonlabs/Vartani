@@ -38,7 +38,7 @@ export default class Bussinessform extends Component {
                   name="sellerId"
                   onChange={this.props.handelOnChange}
                   value={this.props.defaultValue.sellerId || seller_id}
-                  placeholder="A1P3JEITQENDBE"
+                  placeholder="e.g. A1P3JEITQENDBE"
                 />
               </Form.Group>
               <Form.Group as={Col} controlId="storename">
@@ -47,7 +47,7 @@ export default class Bussinessform extends Component {
                   name="storeName"
                   onChange={this.props.handelOnChange}
                   value={this.props.defaultValue.storeName || seller_store_name}
-                  placeholder="Berri Fit®"
+                  placeholder="e.g. Berri Fit®"
                 />
               </Form.Group>
             </Form.Row>
@@ -60,7 +60,7 @@ export default class Bussinessform extends Component {
                   value={
                     this.props.defaultValue.bussiness || seller_business_name
                   }
-                  placeholder="Berri Pro Inc."
+                  placeholder="e.g. Berri Pro Inc."
                 />
               </Form.Group>
               <Form.Group as={Col} controlId="entity_type">
@@ -89,7 +89,7 @@ export default class Bussinessform extends Component {
                 value={this.props.defaultValue.address || street_address}
                 name="address"
                 onChange={this.props.handelOnChange}
-                placeholder="3159 Donald Douglas Loop S Ste 300"
+                placeholder="e.g. 3159 Donald Douglas Loop S Ste 300"
               />
             </Form.Group>
 
@@ -100,7 +100,7 @@ export default class Bussinessform extends Component {
                   name="city"
                   onChange={this.props.handelOnChange}
                   value={this.props.defaultValue.city || city}
-                  placeholder="Santa Monica"
+                  placeholder="e.g. Santa Monica"
                 />
               </Form.Group>
               <Form.Group as={Col} controlId="zip">
@@ -109,7 +109,7 @@ export default class Bussinessform extends Component {
                   name="zip"
                   onChange={this.props.handelOnChange}
                   value={this.props.defaultValue.zip || zip_code}
-                  placeholder="90405"
+                  placeholder="e.g. 90405"
                 />
               </Form.Group>
             </Form.Row>
@@ -120,7 +120,7 @@ export default class Bussinessform extends Component {
                   name="state"
                   onChange={this.props.handelOnChange}
                   value={this.props.defaultValue.state || state}
-                  placeholder="California"
+                  placeholder="e.g. California"
                 />
               </Form.Group>
               <Form.Group as={Col} controlId="country">
@@ -129,7 +129,7 @@ export default class Bussinessform extends Component {
                   name="country"
                   onChange={this.props.handelOnChange}
                   value={this.props.defaultValue.country || country}
-                  placeholder="US"
+                  placeholder="e.g. US"
                 />
               </Form.Group>
             </Form.Row>

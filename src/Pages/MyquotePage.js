@@ -3,6 +3,7 @@ import Tamplate from "../Containers/Tamplate";
 import routes from "../router";
 import logo from "../Assets/Amazone.svg";
 import { connect } from "react-redux";
+import { Skeleton } from "@material-ui/lab";
 
 class Myquotepage extends Component {
   constructor(props) {
@@ -12,6 +13,7 @@ class Myquotepage extends Component {
       lastPage: false,
       sellerDetail: "",
       amount: { direct: 50, discount: 0 },
+      loading: true,
     };
   }
 
@@ -20,10 +22,10 @@ class Myquotepage extends Component {
   //seller_valuechain ----> "Manufacturing" , Distribution
 
   componentDidMount = () => {
-    // console.log(
-    //   "Myquotepage -> componentDidMount -> this.props.sellerData.detailObject.business_details",
-    //   this.props.sellerData.detailObject.business_details
-    // );
+    console.log(
+      "Myquotepage -> componentDidMount -> this.props.sellerData.detailObject.business_details",
+      this.props
+    );
     this.setState({
       sellerDetail:
         localStorage.getItem("apicall") === "yes"
@@ -42,6 +44,26 @@ class Myquotepage extends Component {
       },
       lastPage: localStorage.getItem("apicall") === "no",
     });
+    if (localStorage.getItem("apicall") === "no") {
+      this.setState({
+        loading: false,
+      });
+    } else {
+      setTimeout(() => {
+        this.setState({
+          loading: false,
+        });
+      }, 2000);
+    }
+  };
+
+  componentWillUnmount = () => {
+    if (
+      localStorage.getItem("id") === "1" ||
+      localStorage.getItem("id") === "12"
+    ) {
+      localStorage.removeItem("id");
+    }
   };
 
   handelPayButton = () => {
@@ -57,8 +79,8 @@ class Myquotepage extends Component {
         nextBtnText="Pay"
         addSecondButton={
           this.state.lastPage ||
-          this.props.match.params.id === "1" ||
-          this.props.match.params.id === "12"
+          localStorage.getItem("id") === "1" ||
+          localStorage.getItem("id") === "12"
             ? false
             : this.state.sellerDetail.seller_valuechain === "Manufacturing"
             ? routes.manufacturing
@@ -75,10 +97,23 @@ class Myquotepage extends Component {
         <div style={{ marginTop: "6px" }}>
           <span className="paragraphText">Starting at</span>
           <p className="seller-amount my-qutes-amount">
-            <span className="doller-sign">$</span>
-            {this.props.match.params.id === "12"
-              ? this.state.amount.discount
-              : this.state.amount.direct || 50}
+            <div>
+              {this.state.loading ? (
+                <Skeleton
+                  variant="rect"
+                  animation="wave"
+                  width={60}
+                  height={60}
+                />
+              ) : (
+                <>
+                  <span className="doller-sign">$</span>
+                  {localStorage.getItem("id") === "12"
+                    ? this.state.amount.discount
+                    : this.state.amount.direct || 50}
+                </>
+              )}
+            </div>
           </p>
           <p className="per-month my-qutes-month">PER MONTH</p>
         </div>

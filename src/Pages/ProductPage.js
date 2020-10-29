@@ -41,7 +41,7 @@ class Productpage extends Component {
   };
 
   handelSelected = (data) => {
-    // console.log("Productpage -> handelSelected -> data", data);
+    console.log("Productpage -> handelSelected -> data", data);
     if (data.length > 0) {
       this.setState({
         selected: true,

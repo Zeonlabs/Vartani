@@ -4,7 +4,7 @@ const routes = {
   product: "/product",
   policy: "/policy",
   applicant: "/applicant",
-  quotes: "/quote/:id?",
+  quotes: "/quote/pay",
   manufacturing: "/manufacture",
   distribution: "/distribution",
 };

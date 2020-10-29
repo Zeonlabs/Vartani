@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import Tamplate from "../Containers/Tamplate";
 import { Button } from "@material-ui/core";
 import routes from "../router";
-import { generatePath } from "react-router-dom";
+// import { generatePath } from "react-router-dom";
 import { ButtonGroup, Col, Row, ToggleButton } from "react-bootstrap";
 
 export default class Distribution extends Component {
@@ -24,9 +24,11 @@ export default class Distribution extends Component {
     } else {
       discount = 1;
     }
-    this.props.history.push({
-      pathname: generatePath(routes.quotes, { id: discount ? 12 : 1 }),
-    });
+    this.props.history.push(routes.quotes);
+    localStorage.setItem("id", discount ? 12 : 1);
+    // {
+    //   pathname: generatePath(routes.quotes, { id: discount ? 12 : 1 }),
+    // });
   };
 
   handleBack = () => {

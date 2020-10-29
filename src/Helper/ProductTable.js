@@ -218,8 +218,10 @@ export default function ProductTable(props) {
     if (event.target.checked) {
       const newSelecteds = rows.map((n) => n.id);
       setSelected(newSelecteds);
+      props.handelSelected(newSelecteds);
       return;
     }
+    props.handelSelected([]);
     setSelected([]);
   };
 
