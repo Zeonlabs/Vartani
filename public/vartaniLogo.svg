@@ -1,0 +1,44 @@
+<!-- <svg width="37" height="34" viewBox="0 0 37 34" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<rect width="37" height="34" fill="url(#pattern0)"/>
+<defs>
+<pattern id="pattern0" patternContentUnits="objectBoundingBox" width="1" height="1">
+<use xlink:href="#image0" transform="scale(0.027027 0.0294118)"/>
+</pattern>
+<image id="image0" width="37" height="34" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACUAAAAiCAYAAADYmxC7AAAElklEQVRYCcWX+U9cVRTH549Qo9VojD+oUaPGaNTY3zQuNVVr1KTa0FYwdkHoRmtMa2hpsbWku2ixMC0VGGRpYdhKRwpMQWCkrIWWYUcoe2nZt6/5HvrGl+HN8oYUbvLuu+8u53zuufeee54B91Jx/S18GZGL5zYn4IGvohfleeqb81gVnoXkokbMziokgIHFIxcr8eCaxQFxNeENkfkOMAMttNRACqjRUi/mMnDJlMqlfr8cnDgHtZh7yJtJ998Zg0Gr4+s7kvHMxjhsjMzHa9uT8PGBLARFWfH5oZwFW/WDvWZsi76Kj/Znasq63jagDbV8VyriCxqQaLWjuqUfwVFWMevM7CxeCjJpCtOanHPdGyHJIocZN7ZzO79dQrHxckU7Pv0pW4SsCs/G4PCElI+mVWoK01LgXBd16brI6B0aw7K1ZzXluIXyO2pBWKINpTe7ceHvJpwwV4nA/rvjeGy9tkBnCPX3kwGxGB6bFBmHU69pArG/W6iH/YwCFHDqCqZnZvHuj+ng8jEFni50KVQNoi7vOlcsY6emZ/B8oGsH7RaKAsNMNvifyEPnwAg4u0xbqwiuaunT5dseWhMDe9eQjE0tbnI7IY9QT2+Ig6WyQ+C4D744lCOCmb0fanYrXG2lzw7+P46nT93mXPYIxQE8hR/uy8D45LScmPqOQQFL8TBjtbKc8jYZw5Ps6fbwCurt3Wmg+4/Nu4F/7D3YEVMkCjztDQXqla1/Ou6076I870WvoCi8oLYTNDvTyv2ZuDM6d4p+TnF9ihSoUxnVMs7bU+s11Le/5GP3HyUorO0Uh/pbdq0o6rk9imVrjS73yONfn8PtkTn/diy9ymU/ZQJ8ew1FR1fa0A2/IxZMTs/gvdB0gWJGYLVQdXnrmavSj66El626zVXZaygKiLhQIUFgW+9dhCeVi8enRpu9R1MZNzQVMJnLWjT7aIHpgnohMAE8RXviStE1MILVEbmikNk7e9LmKV0Zlulo/+RA1rx2LSDW6YLiADo+AoxOTCHg5BU03ZpziCarfZ7S9NJmgarrGPToBtSAuqFW7M3A6ZxaxFjqUHKjGz+cLxHF3GfPbop3gL0YZJKriY3bo4sc9Wrlrsq6obhPiuq6xFpUSKc6Mj4lYNxniiLG/ExDIxN4wj/WUa+0u3vrhqIwBns7jcXIq/4Xcfk3EX25TgC4zx7xM+LRdWfB6JEpMqtGFxDl+wTFsIVLt/pwLiamprHinlMlhP/JPGz6tUCAGFC8ui1pcaA4m+PmKvCSbewawj6TTTw+SXi3XWvsFajcinbdQD5bigPpCDNsrbKMHX3DWHfMIiDMKpv7pOxrPO/T8hGKT3pZC5Z/nyqbef3xv9DeNywwdKa0IGMopa+e94Kg6B54yg4mlyO/phNbzlglMmX0EPy71ScgwguUrzOiALoIPsqlzBCap0+PZZz7Ml4zvLUzZUFCnIUu5JsuhSfaEGLU53EXotTTWDpjJgMdHf+GPQ243+20Uk1r/xwUcx7jN0OWbhlpFCWOF0sJGiA/BhdLmhEaXyY/CPytvt8P/wUTChvAUFmd/gM54r+ovp7YagAAAABJRU5ErkJggg=="/>
+</defs>
+</svg> -->
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      fillRule="evenodd"
+      strokeLinejoin="round"
+      strokeMiterlimit="2"
+      clipRule="evenodd"
+      width="22%"
+      viewBox="0 0 500 500"
+    >
+      <path
+        fill="#145C9E"
+        d="M3753.06 347.797c0-28.779-72.46-52.143-161.71-52.143H2297.68c-89.25 0-161.71 23.364-161.71 52.143v417.144c0 28.779 72.46 52.143 161.71 52.143h1293.67c89.25 0 161.71-23.364 161.71-52.143V347.797z"
+        transform="translate(-7170 -289.368) matrix(.3092 0 0 .9589 6509.57 5.865)"
+      ></path>
+      <path
+        fill="#fff"
+        d="M0 125.656c-.847.254-1.682.656-2.533.701-1.898.112-3.812.045-5.721.045-5.763 0-5.748-.015-7.956-5.207-12.939-30.48-25.89-60.961-38.847-91.442-3.827-9.019-7.68-18.03-11.503-27.056-.399-.937-.642-1.929-1.127-3.425 4.555 0 8.706-.085 12.847.086.634.026 1.446 1.13 1.771 1.906 7.288 17.068 14.498 34.166 21.764 51.241a14290.868 14290.868 0 0022.081 51.726c.641 1.522 1.6 2.925 2.42 4.379 2.272 5.685 4.532 11.369 6.804 17.046"
+        transform="translate(-7170 -289.368) matrix(1.5 0 0 1.5 6401.42 130.283) translate(710.702 166.311) scale(1.68785)"
+      ></path>
+      <path
+        fill="#fff"
+        d="M0 126.563c-2.272-5.677-4.532-11.361-6.804-17.046C8.329 73.942 23.472 38.359 38.529 2.742 39.373.769 40.368 0 42.521.123c3.513.198 7.034.056 11.058.056-.432 1.254-.697 2.197-1.081 3.108C35.154 44.133 17.776 84.974.414 125.817c-.108.261-.276.499-.414.746"
+        transform="translate(-7170 -289.368) matrix(1.5 0 0 1.5 6401.42 130.283) translate(710.702 164.78) scale(1.68785)"
+      ></path>
+      <path
+        fill="#fff"
+        d="M0-127.178c2.193 0 4.122-.205 5.976.086.991.157 2.342.974 2.718 1.843 8.434 19.675 16.752 39.398 25.129 59.1C42.718-45.21 51.644-24.3 60.559-3.383c.395.94.686 1.925 1.171 3.312-2.163 0-4.006.276-5.688-.112-.962-.216-1.981-1.372-2.421-2.357-4.032-9.041-7.959-18.127-11.887-27.206-5.804-13.45-11.578-26.922-17.382-40.379C16.319-88.73 8.258-107.335.224-125.943c-.104-.243-.097-.534-.224-1.235"
+        transform="translate(-7170 -289.368) matrix(1.5 0 0 1.5 6401.42 130.283) translate(574.863 379.69) scale(1.68785)"
+      ></path>
+      <path
+        fill="#fff"
+        d="M0-125.958c2.958-1.078 4.427-.28 5.524 2.365 6.673 15.971 13.506 31.879 20.272 47.806a88821.52 88821.52 0 0120.313 47.802c3.83 9.011 7.664 18.023 11.488 27.049.134.313.153.701.257 1.231-2.439.783-4.017.656-5.169-2.097-7.912-18.857-16.005-37.634-23.988-56.455-8.291-19.529-16.519-39.074-24.784-58.6-1.291-3.029-2.608-6.061-3.913-9.101"
+        transform="translate(-7170 -289.368) matrix(1.5 0 0 1.5 6401.42 130.283) translate(560 378.393) scale(1.68785)"
+      ></path>
+    </svg>

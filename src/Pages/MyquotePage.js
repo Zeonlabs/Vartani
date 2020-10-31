@@ -92,7 +92,7 @@ class Myquotepage extends Component {
         last
         handelPay={this.handelPayButton}
       >
-        <p className="sellerPolicy-title">eCommerce Seller's Insurance</p>
+        <p className="sellerPolicy-title">eCommerce Sellers' Insurance</p>
         <img style={{ height: "24px" }} src={logo} alt="amazone-logo" />
         <div style={{ marginTop: "6px" }}>
           <span className="paragraphText">Starting at</span>
@@ -128,7 +128,7 @@ class Myquotepage extends Component {
           <div className="last-paragraph">
             <p className="paragraph-hading">Endorsements</p>
             <span className="paragraphText">
-              The policy must include “Amazon.com, Inc., and its affiliates and
+              The policy includes “Amazon.com, Inc., and its affiliates and
               assignees” as additional insureds.
             </span>
           </div>

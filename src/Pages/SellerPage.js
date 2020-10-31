@@ -54,7 +54,7 @@ class Sellerpage extends Component {
         <div className="last-paragraph">
           <p className="paragraph-hading">Endorsements</p>
           <span className="paragraphText">
-            The policy must include “Amazon.com, Inc., and its affiliates and
+            The policy includes “Amazon.com, Inc., and its affiliates and
             assignees” as additional insureds.
           </span>
         </div>
@@ -78,7 +78,7 @@ class Sellerpage extends Component {
           loading: false,
         });
         this.props.history.push(routes.business);
-      }, 5000);
+      }, 2000);
     }
   };
 
@@ -96,7 +96,7 @@ class Sellerpage extends Component {
         nextNavigate={routes.business}
         button
       >
-        <p className="sellerPolicy-title">eCommerce Seller's Insurance</p>
+        <p className="sellerPolicy-title">eCommerce Sellers' Insurance</p>
 
         <div>
           <span className="paragraphText">Starting at</span>
