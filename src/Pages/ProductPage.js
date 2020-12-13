@@ -2,6 +2,7 @@ import { Snackbar } from "@material-ui/core";
 import { Alert } from "@material-ui/lab";
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import { withRouter } from "react-router-dom";
 import Tamplate from "../Containers/Tamplate";
 import ProductTable from "../Helper/ProductTable";
 import routes from "../router";
@@ -12,9 +13,11 @@ class Productpage extends Component {
 
     this.state = {
       sellerDetail: [],
+      apiData: [],
       apicall: false,
       selected: false,
       openAlert: false,
+      apiAsin: false,
     };
   }
 
@@ -31,13 +34,29 @@ class Productpage extends Component {
           ? JSON.parse(localStorage.getItem("tableData"))
           : [],
       apicall: localStorage.getItem("apicall") === "yes",
+      apiData: this.props.asinDetails,
+      apiAsin: this.props.sellerDetailsState !== undefined ? true : false,
     });
   };
 
+  // componentDidUpdate = (prevProps) => {
+  //   if(prevProps.asinDetails !== this.props.asinDetails){
+  //   console.log("🚀 ~ file: ProductPage.js ~ line 43 ~ Productpage ~ prevProps.asinDetails", prevProps.asinDetails)
+
+  //   }
+  // }
+
   handleSubmit = () => {
-    this.setState({
-      openAlert: true,
-    });
+    if (
+      this.state.apiAsin &&
+      this.props.asinDetails.asinObjectList.length === 0
+    ) {
+      this.props.history.push(routes.policy);
+    } else {
+      this.setState({
+        openAlert: true,
+      });
+    }
   };
 
   handelSelected = (data) => {
@@ -75,12 +94,30 @@ class Productpage extends Component {
             Please Select a row
           </Alert>
         </Snackbar>
+        <div
+          className={`${
+            this.props.sellerDetailsState !== undefined
+              ? "activate-live-other-page"
+              : "inactive-live-other-page"
+          } live-homepage live-other-page`}
+        >
+          <div
+            className={`${
+              this.props.sellerDetailsState !== undefined
+                ? "active-dot-behind-live"
+                : "inactive-dot-behind-live"
+            } dot-behind-live`}
+          ></div>
+          <span>LIVE</span>
+        </div>
         <h1 className="page-title-hading">Product Portfolio</h1>
         <div className="product-table-container">
           <ProductTable
             producteData={this.state.sellerDetail}
             apicall={this.state.apicall}
             handelSelected={this.handelSelected}
+            apiAsin={this.state.apiAsin}
+            apiData={this.state.apiData}
           />
         </div>
       </Tamplate>
@@ -90,4 +127,4 @@ class Productpage extends Component {
 
 const mapStateToProps = (state) => ({ ...state.Test });
 
-export default connect(mapStateToProps)(Productpage);
+export default withRouter(connect(mapStateToProps)(Productpage));

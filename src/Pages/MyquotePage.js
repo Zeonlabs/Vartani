@@ -92,7 +92,23 @@ class Myquotepage extends Component {
         last
         handelPay={this.handelPayButton}
       >
-        <p className="sellerPolicy-title">eCommerce Sellers' Insurance</p>
+        <div
+          className={`${
+            this.props.sellerDetailsState !== undefined
+              ? "activate-live-other-page"
+              : "inactive-live-other-page"
+          } live-homepage live-other-page`}
+        >
+          <div
+            className={`${
+              this.props.sellerDetailsState !== undefined
+                ? "active-dot-behind-live"
+                : "inactive-dot-behind-live"
+            } dot-behind-live`}
+          ></div>
+          <span>LIVE</span>
+        </div>
+        <p className="sellerPolicy-title">eCommerce Seller Insurance</p>
         <img style={{ height: "24px" }} src={logo} alt="amazone-logo" />
         <div style={{ marginTop: "6px" }}>
           <span className="paragraphText">Starting at</span>

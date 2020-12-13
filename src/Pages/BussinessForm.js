@@ -1,6 +1,6 @@
 import { Button } from "@material-ui/core";
 import React, { Component } from "react";
-import { Col, Form } from "react-bootstrap";
+import { Col, Form, Spinner } from "react-bootstrap";
 import getTodayDate from "../Helper/TodaysDate";
 
 export default class Bussinessform extends Component {
@@ -181,7 +181,13 @@ export default class Bussinessform extends Component {
                 type="submit"
                 className="next-button-common"
               >
-                Next
+                {this.props.loading ? (
+                  <Spinner animation="border" variant="light" role="status">
+                    <span className="sr-only">Loading...</span>
+                  </Spinner>
+                ) : (
+                  "Next"
+                )}
               </Button>
             </div>
           </Form>

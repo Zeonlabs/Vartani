@@ -26,32 +26,97 @@ class Businesspage extends Component {
       date: "",
       revenue: "",
       openAlert: false,
+      loading: false,
+      apiCall: false,
     };
   }
 
   componentDidMount = () => {
-    // this.setState({
-    //   sellerDetail: this.props.sellerData
-    //     ? this.props.sellerData.detailObject.business_details
-    //     : {},
-    // });
-    this.setState({
-      sellerDetail:
-        localStorage.getItem("apicall") === "yes"
-          ? JSON.parse(localStorage.getItem("userDetails"))
-          : {},
-    });
+    console.log(
+      "🚀 ~ file: BusinessPage.js ~ line 46 ~ Businesspage ~ this.props.sellerDetailsState",
+      this.props.sellerDetailsState
+    );
+    if (this.props.sellerDetailsState !== undefined) {
+      const sellerDetailsApiData = this.props.sellerDetailsState.res.dataObject
+        .seller_detail;
+      this.setState({
+        sellerId: sellerDetailsApiData.seller_node,
+        storeName: sellerDetailsApiData.seller_name,
+        bussiness: sellerDetailsApiData.seller_detail_business_name,
+        corporation: sellerDetailsApiData.seller_business_incorporation_type,
+        address: sellerDetailsApiData.seller_detail_business_address,
+        city: sellerDetailsApiData.seller_business_city,
+        zip: sellerDetailsApiData.seller_business_postcode,
+        state: sellerDetailsApiData.seller_business_state,
+        country: sellerDetailsApiData.seller_business_country,
+        revenue: "Less than 10,000",
+      });
+    } else {
+      this.setState({
+        sellerDetail:
+          localStorage.getItem("apicall") === "yes"
+            ? JSON.parse(localStorage.getItem("userDetails"))
+            : {},
+      });
+    }
+  };
+
+  componentDidUpdate = (prevProps, prevState) => {
+    if (prevProps.asinDetails !== this.props.asinDetails) {
+      if (this.state.loading && this.props.asinDetails !== undefined) {
+        if (this.state.date === "") {
+          this.setState({
+            openAlert: true,
+            loading: false,
+          });
+        } else {
+          this.setState({
+            loading: false,
+          });
+          this.props.history.push(routes.product);
+        }
+      }
+    }
   };
 
   handleNext = (data) => {
+    console.log(
+      "🚀 ~ file: BusinessPage.js ~ line 93 ~ Businesspage ~ this.props.asinDetails",
+      this.props.asinDetails
+    );
+
     data.preventDefault();
-    if (this.state.date === "" && localStorage.getItem("apicall") === "yes") {
-      this.setState({
-        openAlert: true,
-      });
-    } else {
-      this.props.history.push(routes.product);
+    this.setState({
+      loading: true,
+    });
+    if (this.props.sellerDetailsState === undefined) {
+      if (this.state.date === "" && localStorage.getItem("apicall") === "yes") {
+        this.setState({
+          openAlert: true,
+          loading: false,
+        });
+      } else {
+        this.setState({
+          loading: false,
+        });
+        this.props.history.push(routes.product);
+      }
+    } else if (this.props.asinDetails !== undefined) {
+      if (this.state.date === "") {
+        this.setState({
+          openAlert: true,
+          loading: false,
+        });
+      } else {
+        this.setState({
+          loading: false,
+        });
+        this.props.history.push(routes.product);
+      }
     }
+    // else {
+    //   localStorage.setItem("apiStatus", "buttonPress");
+    // }
   };
 
   handleBack = () => {
@@ -72,6 +137,22 @@ class Businesspage extends Component {
         backNavigate={routes.seller}
         button
       >
+        <div
+          className={`${
+            this.props.sellerDetailsState !== undefined
+              ? "activate-live-other-page"
+              : "inactive-live-other-page"
+          } live-homepage live-other-page`}
+        >
+          <div
+            className={`${
+              this.props.sellerDetailsState !== undefined
+                ? "active-dot-behind-live"
+                : "inactive-dot-behind-live"
+            } dot-behind-live`}
+          ></div>
+          <span>LIVE</span>
+        </div>
         <h1 className="page-title-hading">Business</h1>
         <Snackbar
           anchorOrigin={{ vertical: "top", horizontal: "right" }}
@@ -92,6 +173,7 @@ class Businesspage extends Component {
           sellerDetail={this.state.sellerDetail}
           handelOnChange={this.handelOnChange}
           defaultValue={this.state}
+          loading={this.state.loading}
         />
       </Tamplate>
     );

@@ -7,8 +7,9 @@ import marks from "../Helper/SliderMarks";
 import routes from "../router";
 import "moment/locale/it.js";
 import getTodayDate from "../Helper/TodaysDate";
+import { connect } from "react-redux";
 
-export default class Policypage extends Component {
+class Policypage extends Component {
   constructor(props) {
     super(props);
 
@@ -34,6 +35,22 @@ export default class Policypage extends Component {
   render() {
     return (
       <Tamplate nextNavigate={routes.applicant} backNavigate={routes.product}>
+        <div
+          className={`${
+            this.props.sellerDetailsState !== undefined
+              ? "activate-live-other-page"
+              : "inactive-live-other-page"
+          } live-homepage live-other-page`}
+        >
+          <div
+            className={`${
+              this.props.sellerDetailsState !== undefined
+                ? "active-dot-behind-live"
+                : "inactive-dot-behind-live"
+            } dot-behind-live`}
+          ></div>
+          <span>LIVE</span>
+        </div>
         <h1 className="page-title-hading">Policy Coverage</h1>
         <div className="slider-container">
           <p className="seller-amount policy-amount">
@@ -63,3 +80,6 @@ export default class Policypage extends Component {
     );
   }
 }
+
+const mapStateToProps = (state) => ({ ...state.Test });
+export default connect(mapStateToProps)(Policypage);

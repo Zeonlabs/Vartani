@@ -5,9 +5,10 @@ import routes from "../router";
 import RemoveIcon from "@material-ui/icons/Remove";
 import AddIcon from "@material-ui/icons/Add";
 import { ButtonGroup, Col, Row, ToggleButton } from "react-bootstrap";
+import { connect } from "react-redux";
 // import { generatePath } from "react-router-dom";
 
-export default class Manufacturingpage extends Component {
+class Manufacturingpage extends Component {
   constructor(props) {
     super(props);
 
@@ -201,6 +202,22 @@ export default class Manufacturingpage extends Component {
     const queations = this.getQueations();
     return (
       <Tamplate button cardStyle="manufacturingCard">
+        <div
+          className={`${
+            this.props.sellerDetailsState !== undefined
+              ? "activate-live-other-page"
+              : "inactive-live-other-page"
+          } live-homepage live-other-page`}
+        >
+          <div
+            className={`${
+              this.props.sellerDetailsState !== undefined
+                ? "active-dot-behind-live"
+                : "inactive-dot-behind-live"
+            } dot-behind-live`}
+          ></div>
+          <span>LIVE</span>
+        </div>
         <h1 className="page-title-hading">Manufacturing</h1>
         <div>
           <div className="business-form-container">
@@ -240,3 +257,7 @@ export default class Manufacturingpage extends Component {
     );
   }
 }
+
+const mapStateToProps = (state) => ({ ...state.Test });
+
+export default connect(mapStateToProps)(Manufacturingpage);

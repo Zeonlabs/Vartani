@@ -185,25 +185,32 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function ProductTable(props) {
+  console.log(
+    "🚀 ~ file: ProductTable.js ~ line 192 ~ ProductTable ~ props.apiData",
+    props.apiData
+  );
   const sellerItemData = [];
-  const updatedData =
-    // localStorage.getItem("apicall") === "yes"
-    //   ? props.producteData.map((value, index) =>
-    //       sellerItemData.push({
-    //         id: index,
-    //         ...value,
-    //       })
-    //     )
-    //   : "";
-    props.apicall
-      ? props.producteData.map((value, index) =>
-          sellerItemData.push({
-            id: index,
-            ...value,
-          })
-        )
-      : "";
+
+  const updatedData = props.apiAsin
+    ? props.apiData.asinObjectList.map((value, index) =>
+        sellerItemData.push({
+          id: index,
+          ...value,
+        })
+      )
+    : props.apicall
+    ? props.producteData.map((value, index) =>
+        sellerItemData.push({
+          id: index,
+          ...value,
+        })
+      )
+    : "";
   console.info("ProductTable -> updatedData", updatedData);
+  console.log(
+    "🚀 ~ file: ProductTable.js ~ line 193 ~ ProductTable ~ sellerItemData",
+    sellerItemData
+  );
   const rows = !props.apicall ? SampleArray : sellerItemData;
   // localStorage.getItem("apicall") === "yes" ? SampleArray : sellerItemData;
   const classes = useStyles();
@@ -282,61 +289,80 @@ export default function ProductTable(props) {
               rowCount={rows.length}
             />
             <TableBody>
-              {stableSort(rows)
-                .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
-                .map((row, index) => {
-                  const isItemSelected = isSelected(row.id);
-                  const labelId = `enhanced-table-checkbox-${index}`;
+              {props.apiAsin && props.apiData.asinObjectList.length === 0 ? (
+                <>
+                  <div className="blankPolicy-table">
+                    <h1>No Data</h1>
+                  </div>
+                  <div className="policy-table-placeholder"></div>
+                </>
+              ) : (
+                <>
+                  {stableSort(rows)
+                    .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
+                    .map((row, index) => {
+                      const isItemSelected = isSelected(row.id);
+                      const labelId = `enhanced-table-checkbox-${index}`;
 
-                  return (
-                    <TableRow
-                      hover
-                      onClick={(event) => handleClick(event, row.id)}
-                      role="checkbox"
-                      aria-checked={isItemSelected}
-                      tabIndex={-1}
-                      key={row.id}
-                      selected={isItemSelected}
-                    >
-                      <TableCell width="5%" align="center">
-                        <img
-                          style={{ cursor: "pointer" }}
-                          onClick={() => handelRedirect(row.asin_link)}
-                          src={LinkSvg}
-                          alt="link"
-                        />
-                      </TableCell>
-                      <TableCell align="left">{row.asin}</TableCell>
-                      <TableCell align="left">
-                        <img
-                          height="66px"
-                          width="66px"
-                          src={row.image}
-                          alt="product"
-                        />
-                      </TableCell>
-                      <TableCell align="left" width="40%">
-                        {row.name}
-                      </TableCell>
-                      <TableCell align="left" width="12%">
-                        {row.asin_brand_name}
-                      </TableCell>
-                      <TableCell align="left" width="18%">
-                        {row.manufacturer}
-                      </TableCell>
-                      <TableCell padding="checkbox">
-                        <Checkbox
-                          checked={isItemSelected}
-                          inputProps={{ "aria-labelledby": labelId }}
-                        />
-                      </TableCell>
+                      return (
+                        <TableRow
+                          hover
+                          onClick={(event) => handleClick(event, row.id)}
+                          role="checkbox"
+                          aria-checked={isItemSelected}
+                          tabIndex={-1}
+                          key={row.id}
+                          selected={isItemSelected}
+                        >
+                          <TableCell width="5%" align="center">
+                            <img
+                              style={{ cursor: "pointer" }}
+                              onClick={() => handelRedirect(row.asin_link)}
+                              src={LinkSvg}
+                              alt="link"
+                            />
+                          </TableCell>
+                          <TableCell align="left">
+                            {props.apiAsin ? row.asin_dbr : row.asin}
+                          </TableCell>
+                          <TableCell align="left">
+                            <img
+                              height="66px"
+                              width="66px"
+                              src={
+                                props.apiAsin
+                                  ? row.asin_image_link_list[0]
+                                  : row.image
+                              }
+                              alt="product"
+                            />
+                          </TableCell>
+                          <TableCell align="left" width="40%">
+                            {props.apiAsin ? row.asin_name : row.name}
+                          </TableCell>
+                          <TableCell align="left" width="12%">
+                            {props.apiAsin ? row.asin_dbr : row.asin_brand_name}
+                          </TableCell>
+                          <TableCell align="left" width="18%">
+                            {props.apiAsin
+                              ? row.Manufacturer
+                              : row.manufacturer}
+                          </TableCell>
+                          <TableCell padding="checkbox">
+                            <Checkbox
+                              checked={isItemSelected}
+                              inputProps={{ "aria-labelledby": labelId }}
+                            />
+                          </TableCell>
+                        </TableRow>
+                      );
+                    })}
+                  {emptyRows > 0 && (
+                    <TableRow style={{ height: 53 * emptyRows }}>
+                      <TableCell colSpan={6} />
                     </TableRow>
-                  );
-                })}
-              {emptyRows > 0 && (
-                <TableRow style={{ height: 53 * emptyRows }}>
-                  <TableCell colSpan={6} />
-                </TableRow>
+                  )}
+                </>
               )}
             </TableBody>
           </Table>

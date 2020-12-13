@@ -4,8 +4,8 @@ import { Button } from "@material-ui/core";
 import routes from "../router";
 // import { generatePath } from "react-router-dom";
 import { ButtonGroup, Col, Row, ToggleButton } from "react-bootstrap";
-
-export default class Distribution extends Component {
+import { connect } from "react-redux";
+class Distribution extends Component {
   constructor(props) {
     super(props);
 
@@ -95,6 +95,22 @@ export default class Distribution extends Component {
     const queations = this.getQueations();
     return (
       <Tamplate button cardStyle="manufacturingCard">
+        <div
+          className={`${
+            this.props.sellerDetailsState !== undefined
+              ? "activate-live-other-page"
+              : "inactive-live-other-page"
+          } live-homepage live-other-page`}
+        >
+          <div
+            className={`${
+              this.props.sellerDetailsState !== undefined
+                ? "active-dot-behind-live"
+                : "inactive-dot-behind-live"
+            } dot-behind-live`}
+          ></div>
+          <span>LIVE</span>
+        </div>
         <h1 className="page-title-hading">Distribution</h1>
         <div>
           <div className="business-form-container">
@@ -134,3 +150,7 @@ export default class Distribution extends Component {
     );
   }
 }
+
+const mapStateToProps = (state) => ({ ...state.Test });
+
+export default connect(mapStateToProps)(Distribution);

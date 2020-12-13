@@ -8,7 +8,13 @@ import { Form, Spinner } from "react-bootstrap";
 import { Button, TextField } from "@material-ui/core";
 import { withRouter } from "react-router-dom";
 import { connect } from "react-redux";
-import { sellerDetails } from "../Api/FetchUrl";
+import {
+  sellerDetails,
+  sellerDetail,
+  liveSeller,
+  asinApi,
+} from "../Api/FetchUrl";
+import { PasswordModal } from "./PasswordModal";
 
 class Sellerpage extends Component {
   constructor(props) {
@@ -17,11 +23,17 @@ class Sellerpage extends Component {
     this.state = {
       selectedId: "",
       loading: false,
+      live: false,
       apiCall: false,
+      liveModal: false,
+      passewordloading: false,
     };
   }
 
   handleSubmit = (event) => {
+    this.setState({
+      loading: true,
+    });
     event.preventDefault();
     if (this.state.selectedId === "") {
       // this.setState({
@@ -31,11 +43,39 @@ class Sellerpage extends Component {
       localStorage.setItem("apicall", "no");
       // this.props.sellerDetails({ seller_node: "" });
       this.props.history.push(routes.business);
-    } else {
-      this.setState({
-        loading: true,
-      });
+    } else if (!this.state.live) {
       this.props.sellerDetails({ seller_node: this.state.selectedId });
+    } else {
+      const password = this.props.jwttoken;
+      const data = {
+        seller_node: this.state.selectedId,
+        password,
+      };
+      this.props.sellerDetail(data).then((res) => {
+        console.log(
+          "🚀 ~ file: SellerPage.js ~ line 61 ~ Sellerpage ~ this.props.sellerDetail ~ this.props.jwttoken",
+          password
+        );
+        const rawasin = res.dataObject.seller_asin;
+        const asin = [];
+        rawasin.map((dataasin) => asin.push(dataasin.asin));
+        const asinData = {
+          asin: rawasin.length === 0 ? [] : asin,
+          password,
+        };
+        localStorage.setItem("asinapi", "incall");
+        this.props
+          .asinApi(asinData)
+          .then((res) => localStorage.setItem("asinapi", "complete"));
+        this.setState({
+          loading: false,
+        });
+        // console.log(
+        //   "🚀 ~ file: SellerPage.js ~ line 141 ~ Sellerpage ~ this.props.liveSeller ~ this.props.sellerDetails",
+        //   this.props.sellerDetails
+        // );
+        this.props.history.push(routes.business);
+      });
     }
 
     // this.props.history.push(routes.business);
@@ -64,21 +104,35 @@ class Sellerpage extends Component {
 
   componentDidUpdate = (prevProps) => {
     if (this.props.sellerData !== prevProps.sellerData) {
-      localStorage.setItem(
-        "userDetails",
-        JSON.stringify(this.props.sellerData.detailObject.business_details)
-      );
-      localStorage.setItem(
-        "tableData",
-        JSON.stringify(this.props.sellerData.detailObject.product_details)
-      );
-      localStorage.setItem("apicall", "yes");
-      setTimeout(() => {
-        this.setState({
-          loading: false,
-        });
-        this.props.history.push(routes.business);
-      }, 2000);
+      if (!this.state.liveModal) {
+        localStorage.setItem(
+          "userDetails",
+          JSON.stringify(this.props.sellerData.detailObject.business_details)
+        );
+        localStorage.setItem(
+          "tableData",
+          JSON.stringify(this.props.sellerData.detailObject.product_details)
+        );
+        localStorage.setItem("apicall", "yes");
+        setTimeout(() => {
+          this.setState({
+            loading: false,
+          });
+          this.props.history.push(routes.business);
+        }, 2000);
+      }
+    }
+  };
+
+  componentDidMount = () => {
+    console.log(
+      "🚀 ~ file: SellerPage.js ~ line 129 ~ Sellerpage ~ this.props.sellerDetails",
+      this.props.sellerDetailsState
+    );
+    if (this.props.sellerDetailsState !== undefined) {
+      this.setState({
+        live: true,
+      });
     }
   };
 
@@ -89,6 +143,38 @@ class Sellerpage extends Component {
     });
   };
 
+  handleLive = () => {
+    if (!this.state.live) {
+      this.setState({
+        liveModal: true,
+      });
+    }
+  };
+
+  handleClosePassModal = () => {
+    this.setState({
+      liveModal: false,
+    });
+  };
+
+  passwordSubmit = (pass) => {
+    this.setState({
+      passewordloading: true,
+    });
+    const data = {
+      username: "vaartani-admin",
+      secret: pass,
+    };
+    this.props.liveSeller(data).then((res) => {
+      this.setState({
+        liveModal: false,
+        passewordloading: false,
+        live: !this.state.live,
+      });
+      // this.props.sellerDetails
+    });
+  };
+
   render() {
     return (
       <Tamplate
@@ -96,7 +182,28 @@ class Sellerpage extends Component {
         nextNavigate={routes.business}
         button
       >
-        <p className="sellerPolicy-title">eCommerce Sellers' Insurance</p>
+        <div
+          onClick={this.handleLive}
+          className={`${
+            this.state.live
+              ? "activate-live-homepage"
+              : "inactive-live-homepage"
+          } live-homepage`}
+        >
+          <span>LIVE</span>
+        </div>
+        <div className="live-homepage">
+          {this.state.liveModal ? (
+            <PasswordModal
+              close={this.handleClosePassModal}
+              handleSubmit={this.passwordSubmit}
+              passwordloading={this.state.passewordloading}
+            />
+          ) : (
+            ""
+          )}
+        </div>
+        <p className="sellerPolicy-title">eCommerce Seller Insurance</p>
 
         <div>
           <span className="paragraphText">Starting at</span>
@@ -119,6 +226,7 @@ class Sellerpage extends Component {
               freeSolo
               id="free-solo-2-demo"
               disableClearable
+              disabled={this.state.loading}
               className="autoselect-dorpdown-wrapper"
               options={sellerId.map((option) => option.seller_node)}
               renderInput={(params) => (
@@ -160,7 +268,12 @@ class Sellerpage extends Component {
 const mapStateToProps = (state) => ({ ...state.Test });
 
 export default withRouter(
-  connect(mapStateToProps, { sellerDetails })(Sellerpage)
+  connect(mapStateToProps, {
+    sellerDetails,
+    liveSeller,
+    sellerDetail,
+    asinApi,
+  })(Sellerpage)
 );
 
 const sellerId = [

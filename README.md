@@ -67,7 +67,12 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
 
-### Command for a Google Cloud live 
+### Command for a Google Cloud live
+
+<!--   -->
+<!--Remove Directory command   -->
+
+rm -r dir1
 
 gsutil rsync -r gs://vaartani_mukund ./insurance
 

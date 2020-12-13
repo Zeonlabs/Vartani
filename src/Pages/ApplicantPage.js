@@ -2,10 +2,11 @@ import { Button, Snackbar } from "@material-ui/core";
 import { Alert } from "@material-ui/lab";
 import React, { Component } from "react";
 import { Form } from "react-bootstrap";
+import { connect } from "react-redux";
 import Tamplate from "../Containers/Tamplate";
 import routes from "../router";
 
-export default class Applicantpage extends Component {
+class Applicantpage extends Component {
   constructor(props) {
     super(props);
 
@@ -91,6 +92,22 @@ export default class Applicantpage extends Component {
   render() {
     return (
       <Tamplate button>
+        <div
+          className={`${
+            this.props.sellerDetailsState !== undefined
+              ? "activate-live-other-page"
+              : "inactive-live-other-page"
+          } live-homepage live-other-page`}
+        >
+          <div
+            className={`${
+              this.props.sellerDetailsState !== undefined
+                ? "active-dot-behind-live"
+                : "inactive-dot-behind-live"
+            } dot-behind-live`}
+          ></div>
+          <span>LIVE</span>
+        </div>
         <h1 className="page-title-hading">Applicant details</h1>
         <Snackbar
           anchorOrigin={{ vertical: "top", horizontal: "right" }}
@@ -172,3 +189,6 @@ export default class Applicantpage extends Component {
     );
   }
 }
+
+const mapStateToProps = (state) => ({ ...state.Test });
+export default connect(mapStateToProps)(Applicantpage);
